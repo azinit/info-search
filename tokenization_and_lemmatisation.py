@@ -69,5 +69,5 @@ if __name__ == '__main__':
     # write to file
     lemmas_file = open("lemmas.txt", "a")
     for l in lmms:
-        lemmas_file.write(l + " " + " ".join(lmms[l]) + '\n')
+        lemmas_file.write(l + ": " + " ".join(lmms[l]) + '\n')
     lemmas_file.close()
