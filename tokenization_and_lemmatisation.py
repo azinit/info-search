@@ -24,7 +24,7 @@ def normalize_tokens(tokens):
     # leave just russian words
     for token in tokens:
         if token.lower() not in stopwords.words("russian") and re.compile("^[а-я]+$").match(token.lower()):
-            res.append(token)
+            res.append(token.lower())
     # return unique tokens
     return set(res)
 
@@ -68,6 +68,6 @@ if __name__ == '__main__':
     lmms = get_lemmas("tokens.txt")
     # write to file
     lemmas_file = open("lemmas.txt", "a")
-    lemmasWithView = "\n".join(map(lambda values: " ".join(values), lmms.values()))
-    lemmas_file.write(lemmasWithView)
-
+    for l in lmms:
+        lemmas_file.write(l + " " + " ".join(lmms[l]) + '\n')
+    lemmas_file.close()
