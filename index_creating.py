@@ -20,9 +20,24 @@ def normalize_tokens(tokens):
     return set(res)
 
 
+def list_normalize_tokens(tokens):
+    res = []
+    # leave just russian words
+    for token in tokens:
+        if token.lower() not in stopwords.words("russian") and re.compile("^[а-я]+$").match(token.lower()):
+            res.append(token.lower())
+    # return unique tokens
+    return list(res)
+
+
 def get_tokens(text):
     tokens = word_tokenize(text.replace('.', ' '))
     return normalize_tokens(tokens)
+
+
+def get_list_tokens(text):
+    tokens = word_tokenize(text.replace('.', ' '))
+    return list_normalize_tokens(tokens)
 
 
 def create_inverted_index(zip_f):
@@ -43,6 +58,25 @@ def create_inverted_index(zip_f):
             normal_form = morph.parse(token)[0].normal_form
             if normal_form in index:
                 index[normal_form].append(i)
+    # return inverted index
+    return index
+
+
+def create_inverted_index_tokens(zip_f):
+    index = {}
+
+    # range zip file with data (html)
+    for i, file in enumerate(zip_f.filelist):
+        content = zip_f.open(file)
+        text = BeautifulSoup(content, parser).get_text()
+        # get tokens from file
+        tokens = set(get_tokens(text))
+
+        for token in tokens:
+            if token in index:
+                index[token].add(i)
+            else:
+                index[token] = {i}
     # return inverted index
     return index
 
