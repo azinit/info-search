@@ -4,4 +4,4 @@ from django.shortcuts import render
 # Create your views here.
 def index(request):
     context = {}
-    return render(request, 'infosearch/index.html', context)
+    return render(request, 'infosearch/index/index.html', context)
