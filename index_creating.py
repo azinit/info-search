@@ -4,11 +4,10 @@ import re
 from bs4 import BeautifulSoup
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-from lib import Logger
+
 
 morph = pymorphy2.MorphAnalyzer()
 parser = 'html.parser'
-logger = Logger('indexing')
 
 
 def normalize_tokens(tokens):
@@ -42,9 +41,8 @@ def get_list_tokens(text):
 
 
 def create_inverted_index(zip_f):
-    logger.log("CREATE INVERTED_INDEX".center(64, "="))
     # get lemmas from lemmas.txt file
-    lemmas_file = open("lemmas.txt", "r", encoding="utf-8")
+    lemmas_file = open("lemmas.txt", "r")
     index = {}
     for row in lemmas_file:
         lemma = row.split(':')[0]
@@ -65,7 +63,6 @@ def create_inverted_index(zip_f):
 
 
 def create_inverted_index_tokens(zip_f):
-    logger.log("CREATE INVERTED_INDEX_TOKENS".center(64, "="))
     index = {}
 
     # range zip file with data (html)
@@ -85,17 +82,13 @@ def create_inverted_index_tokens(zip_f):
 
 
 def save_inverted_index(filename, ind):
-    logger.log("SAVING INDEX".center(64, "="))
-
-    inverted_index_file = open(filename, "a", encoding="utf-8")
+    inverted_index_file = open(filename, "a")
     for i in ind:
         inverted_index_file.write(i + ": " + " ".join(map(lambda file_number: str(file_number), ind[i])) + "\n")
     inverted_index_file.close()
 
 
 def bool_search(query, index):
-    logger.log("BOOL SEARCHING".center(64, "="))
-
     parts = query.split()
     for i in range(1, len(parts), 2):
         if parts[i].lower() != 'or' and parts[i].lower() != 'and':
@@ -107,10 +100,10 @@ def bool_search(query, index):
     normal_form = morph.parse(parts[0])[0].normal_form
 
     if normal_form in index:
-        # print(index[normal_form])
+        print(index[normal_form])
         result = set(index[normal_form])
     else:
-        result = set()
+        result = set
 
     for i in range(2, len(parts), 2):
         normal_form = morph.parse(parts[i])[0].normal_form
@@ -120,16 +113,16 @@ def bool_search(query, index):
                 result = result.intersection(index[normal_form])
             else:
                 result = result.union(index[normal_form])
+        else:
+            if parts[i - 1] == 'and':
+                result = {}
 
-    # print(result)
-    return result
+    print(result)
 
 
 def read_index(index_file_path):
-    logger.log("READING INDEX".center(64, "="))
-
     index_dict = {}
-    with open(index_file_path, "r", encoding="utf-8") as file:
+    with open(index_file_path, "r") as file:
         lines = file.readlines()
         for line in lines:
             items = line.split(": ")
@@ -142,17 +135,15 @@ if __name__ == '__main__':
     zip_file_path = "выкачка.zip"
     zip_file = zipfile.ZipFile(zip_file_path, "r")
 
-    # # create inverted index
-    # inverted_index = create_inverted_index(zip_file)
-    #
-    # # write to file
+    # create inverted index
+    inverted_index = create_inverted_index(zip_file)
+
+    # write to file
     inverted_index_path = "inverted_index.txt"
-    # save_inverted_index(inverted_index_path, inverted_index)
+    save_inverted_index(inverted_index_path, inverted_index)
 
     # read inverted index
     read_inverted_index = read_index(inverted_index_path)
 
-    # q = "буквально or новый стриминговый сервис"
-    q = "буквально or абьюзер"
-    results = bool_search(q, read_inverted_index)
-    print(f"BoolSearch indices = {results}")
+    q = "абьюзер and ордывд"
+    bool_search(q, read_inverted_index)

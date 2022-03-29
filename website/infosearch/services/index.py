@@ -28,7 +28,8 @@ DB_PATH = "infosearch/services/data"
 os.chdir(DIR_PATH)
 index = read_index("./inverted_index.txt")
 
-
+# TODO: NOT
+# TODO: lower/upper for AND и OR
 def bool_search(query):
     parts = query.split()
     for i in range(1, len(parts), 2):
@@ -54,6 +55,9 @@ def bool_search(query):
                 result = result.intersection(index[normal_form])
             else:
                 result = result.union(index[normal_form])
+        else:
+            if parts[i - 1] == 'and':
+                result = {}
 
     return result
 
