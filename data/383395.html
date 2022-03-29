@@ -8,7 +8,7 @@
 -->
 <html>
     <head>
-        <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.eu01.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-dce6e6fa1bff85ee22a",applicationID:"146362531"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+        <meta charset="utf-8">
 
         
         <title> на vc.ru</title>
@@ -49,17 +49,17 @@
         
         <!-- Favicons -->
         
-        <link rel="shortcut icon" href="https://vcstaticbf19cf1-a.akamaihd.net/static/build/vc.ru/favicons/favicon.ico">
-        <link rel="icon" type="image/png" href="https://vcstaticbf19cf1-a.akamaihd.net/static/build/vc.ru/favicons/apple-touch-icon-180x180.png">
-        <link rel="apple-touch-icon" href="https://vcstaticbf19cf1-a.akamaihd.net/static/build/vc.ru/favicons/apple-touch-icon-180x180.png">
-        <link rel="mask-icon" href="https://vcstaticbf19cf1-a.akamaihd.net/static/build/vc.ru/favicons/safari-pinned-tab.svg" color="#E25A76">
+        <link rel="shortcut icon" href="https://vc-static-bf19cf1.gcdn.co/static/build/vc.ru/favicons/favicon.ico">
+        <link rel="icon" type="image/png" href="https://vc-static-bf19cf1.gcdn.co/static/build/vc.ru/favicons/apple-touch-icon-180x180.png">
+        <link rel="apple-touch-icon" href="https://vc-static-bf19cf1.gcdn.co/static/build/vc.ru/favicons/apple-touch-icon-180x180.png">
+        <link rel="mask-icon" href="https://vc-static-bf19cf1.gcdn.co/static/build/vc.ru/favicons/safari-pinned-tab.svg" color="#E25A76">
 
         
-        <link rel="stylesheet" href="https://vcstaticbf19cf1-a.akamaihd.net/static/build/vc.ru/main.e076445d.min.css">
+        <link rel="stylesheet" href="https://vc-static-bf19cf1.gcdn.co/static/build/vc.ru/main.4e104f4e.min.css">
 
         <link rel="manifest" href="/static/build/vc.ru/json/gcm-manifest.json">
 
-        <meta name="msapplication-tile-image" content="https://vcstaticbf19cf1-a.akamaihd.net/static/build/vc.ru/favicons/mstile-150x150.png">
+        <meta name="msapplication-tile-image" content="https://vc-static-bf19cf1.gcdn.co/static/build/vc.ru/favicons/mstile-150x150.png">
 
         <!-- Chrome, Firefox OS and Opera -->
         <meta name="theme-color" content="#FEEBEF">
@@ -100,7 +100,7 @@
             </head>
 
     
-    <body class="app app--content-entry app--left-column-on app--right-column-on app--propaganda-on app--livestream-on app--content-sidebar-align-right app--right-column-reserve-off app--live-auto" data-country-code="DE" data-one-name="body">
+    <body class="app app--content-entry app--left-column-on app--right-column-on app--propaganda-on app--livestream-on app--content-sidebar-align-right app--right-column-reserve-off app--live-auto" data-country-code="FI" data-one-name="body">
         <script>
             /**
              * Dealing with adblock class:
@@ -188,7 +188,11 @@
 <!-- Special Igrozhur -->
 
 <div class="page page--entry">
-                
+            
+<div air-module="module.distributionFloating">
+    <air-settings>{"id":13428,"url":"\/distributions\/13428\/click?bit=1&hash=196f488230fca21c0af501fd22c120f2242b72585db7f3174a1f538988e37e45","title":"\u0423 \u0442\u0440\u0435\u0432\u0435\u043b-\u0431\u043b\u043e\u0433\u0435\u0440\u043e\u0432 \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0435\u0442 \u0440\u0430\u0431\u043e\u0442\u044b?","buttonText":"\u041d\u0435\u043f\u0440\u0430\u0432\u0434\u0430","imageUuid":"358aa1d3-165b-5e17-86c3-deda5fa1e8b2","isPaidAndBannersEnabled":false}</air-settings>
+</div>
+    
     <!-- Microdata for search engines -->
     
 <script type="application/ld+json">
@@ -225,9 +229,9 @@ content-header--empty-title"
                 
                 <div class="content-header__item content-header-number">
                             <span class="lm-hidden">
-                    <time class="time" air-module="module.date" data-date="1647745415" data-type="default" title="20.03.2022 06:03:35 (Europe/Moscow)">сегодня&nbsp;в&nbsp;06:03</time>                </span>
+                    <time class="time" air-module="module.date" data-date="1647745415" data-type="default" title="20.03.2022 06:03:35 (Europe/Moscow)">20&nbsp;мар&nbsp;в&nbsp;06:03</time>                </span>
                 <span class="l-hidden lm-inline">
-                    <time class="time" air-module="module.date" data-date="1647745415" data-type="medium" title="20.03.2022 06:03:35 (Europe/Moscow)">06:03</time>                </span>
+                    <time class="time" air-module="module.date" data-date="1647745415" data-type="medium" title="20.03.2022 06:03:35 (Europe/Moscow)">20&nbsp;мар</time>                </span>
                     </div>
     </div>
 
@@ -636,8 +640,6 @@ content-header--empty-title"
         
             
                                     <div class="l-island-a">
-                    <div class="inline_video_banner"></div>
-
                     
 <div class="propaganda" data-id="13"></div>
                 </div>
@@ -1256,7 +1258,7 @@ content-header--empty-title"
         
                 
                             <a class="content-header__item content-header-number" href="https://vc.ru/u/1126579-tatyana-mironova/383163-blokirovka-kart-tinkoff-banka" data-gtm="Feed Item — Date — Click">
-                <time class="time" air-module="module.date" data-date="1647698362" data-type="medium" title="19.03.2022 16:59:22 (Europe/Moscow)">вчера</time>            </a>
+                <time class="time" air-module="module.date" data-date="1647698362" data-type="medium" title="19.03.2022 16:59:22 (Europe/Moscow)">19&nbsp;мар</time>            </a>
         
                 
                 
@@ -1333,7 +1335,7 @@ content-header--empty-title"
         
                 
                             <a class="content-header__item content-header-number" href="https://vc.ru/u/1127112-fil-maind/383096-tinkoff-sboy-ili-realnaya-blokirovka" data-gtm="Feed Item — Date — Click">
-                <time class="time" air-module="module.date" data-date="1647692454" data-type="medium" title="19.03.2022 15:20:54 (Europe/Moscow)">вчера</time>            </a>
+                <time class="time" air-module="module.date" data-date="1647692454" data-type="medium" title="19.03.2022 15:20:54 (Europe/Moscow)">19&nbsp;мар</time>            </a>
         
                 
                 
@@ -1560,13 +1562,13 @@ content-header--empty-title"
                 
                 
 <div
-class="l-mb-28 lm-mb-20 content-feed content-feed--claim content-feed--383534 l-island-bg l-island-round"
+class="l-mb-28 lm-mb-20 content-feed content-feed--services content-feed--389339 l-island-bg l-island-round"
 air-module="module.entry"
-air-click="feed_item_clicked?content_id=383534"
+air-click="feed_item_clicked?content_id=389339"
 air-entry-type="short"
-data-feed-item-id="content_383534"
-data-content-id="383534"
-data-publish-date="1647774242"
+data-feed-item-id="content_389339"
+data-content-id="389339"
+data-publish-date="1648487948"
 data-location="my-feed"
 >
     
@@ -1581,22 +1583,22 @@ data-location="my-feed"
 ">
     <div class="content-header__info">
 
-                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/claim" data-gtm="Feed Item — Subsite Name — Click">
-                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/08ff68ad-2175-51fb-8adc-a56f40ac6ffa/-/scale_crop/64x64/')"></div>
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/services" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/158fab2d-76c1-5ed8-898a-76ee48d4c795/-/scale_crop/64x64/')"></div>
 
                 <div class="content-header-author__name">
-                    Приёмная                </div>
+                    Сервисы                </div>
 
                             </a>
         
-                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/1125805-anton" data-gtm="Feed Item — Author Name — Click">
+                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/-1-tureckiy-kran" data-gtm="Feed Item — Author Name — Click">
                 <div class="content-header-author__name">
-                    Anton                </div>
+                    Турецкий кран                </div>
 
                             </a>
         
-                            <a class="content-header__item content-header-number" href="https://vc.ru/claim/383534-alfa-bank-ne-hochet-vozvrashchat-komissiyu-vopreki-resheniyu-cb" data-gtm="Feed Item — Date — Click">
-                <time class="time" air-module="module.date" data-date="1647774242" data-type="medium" title="20.03.2022 14:04:02 (Europe/Moscow)">4&nbsp;часа</time>            </a>
+                            <a class="content-header__item content-header-number" href="https://vc.ru/services/389339-byvshiy-rukovoditel-yandeks-novostey-lev-gershenzon-obyavil-o-planah-zapustit-novostnoy-agregator" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648487948" data-type="medium" title="28.03.2022 20:19:08 (Europe/Moscow)">10&nbsp;часов</time>            </a>
         
                 
                 
@@ -1610,7 +1612,7 @@ data-location="my-feed"
 
 <vue name="layout-subscribe-button">
   <textarea hidden class="l-hidden">
-      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:199124,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:200396,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
 </vue>
         </div>
     
@@ -1624,167 +1626,7 @@ data-location="my-feed"
                     ">
     <div class="content-container">
                     <div class="content-title content-title--short l-island-a">
-                                    «Альфа-банк» не хочет возвращать комиссию вопреки решению ЦБ                            </div>
-        
-                    <div class="l-island-a">
-    
-        
-            <p>27 февраля 2022 года я заказал в «Альфа-банке» наличную валюту со своего долларового счёта. Ближайшей датой получения было 9 марта. Комиссия, которая автоматически рассчитывается банком в момент заказа валюты, была равна нулю. Но 9 марта, в момент получения заказанной валюты, банк поставил меня перед фактом, что за эту операцию будет взята…</p>
-        
-    </div>
-        
-            </div>
-
-    
-    <a class="content-link" href="https://vc.ru/claim/383534-alfa-bank-ne-hochet-vozvrashchat-komissiyu-vopreki-resheniyu-cb" data-analytics="Feed Item"></a>
-</div>
-
-
-
-
-<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
-
-  
-      <textarea air-settings>
-            {
-    "lastComments": [
-        {
-            "photo": "https:\/\/leonardo.osnova.io\/5c743f9f-11eb-4210-2a78-8a132e3c51f7\/"
-        }
-    ]
-}        </textarea>
-  
-        <div class="content-footer__item">
-      
-<vue name="comments-counter">
-    <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383534,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/claim\/383534-alfa-bank-ne-hochet-vozvrashchat-komissiyu-vopreki-resheniyu-cb&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:18}    </textarea>
-</vue>
-    </div>
-  
-    
-        <div class="content-footer__item content-footer__item--shrink">
-      
-<vue name="bookmark">
-    <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383534,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
-</vue>
-    </div>
-  
-        <div class="content-footer__item content-footer__item--share ">
-      
-<!--googleoff: all-->
-<!--noindex-->
-
-<vue name="layout-shares">
-    <textarea hidden>
-        {"id":383534,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
-</vue>
-
-<!--/noindex-->
-<!--googleon: all-->
-    </div>
-  
-        <div class="content-footer__item content-footer__item--right">
-            
-<div class="vote vote--content vote--sum-positive"
-     air-module="module.votes"
-     data-id="383534"
-     data-type="1"
-     data-type-str="content"
-     data-symbols="—|–"
-     data-state="0"
-     data-with-users="1"
-     data-content-id="383534"
-     data-subsite-id="199124"
-     data-subsite-name="Приёмная"
-     data-subsite-avatar="https://leonardo.osnova.io/08ff68ad-2175-51fb-8adc-a56f40ac6ffa/"
-     data-subsite-url="https://vc.ru/claim"
-     data-subsite-type="2"
-     data-place="feed"
-            data-count="27"
-        >
-    <div class="vote__button vote__button--minus">
-        <svg class="icon icon--v_arrow_down" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_down"></use></svg>    </div>
-
-    <div class="vote__value" data-value-real="27">
-        27    </div>
-
-    <div class="vote__button vote__button--plus">
-        <svg class="icon icon--v_arrow_up" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_up"></use></svg>    </div>
-</div>
-    </div>
-  
-</div>
-</div>
-
-
-<div
-class="l-mb-28 lm-mb-20 content-feed content-feed--social content-feed--383458 l-island-bg l-island-round"
-air-module="module.entry"
-air-click="feed_item_clicked?content_id=383458"
-air-entry-type="short"
-data-feed-item-id="content_383458"
-data-content-id="383458"
-data-publish-date="1647762567"
-data-location="my-feed"
->
-    
-
-
-
-
-<div class="
-    content-header
-    content-header--short
-        content-header--anon        l-island-a
-">
-    <div class="content-header__info">
-
-                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/social" data-gtm="Feed Item — Subsite Name — Click">
-                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/cccbcc79-da83-51d9-b67a-b1284ba60093/-/scale_crop/64x64/')"></div>
-
-                <div class="content-header-author__name">
-                    Соцсети                </div>
-
-                            </a>
-        
-                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/tj" data-gtm="Feed Item — Author Name — Click">
-                <div class="content-header-author__name">
-                    TJ                </div>
-
-                            </a>
-        
-                            <a class="content-header__item content-header-number" href="https://vc.ru/social/383458-mediascope-auditoriya-instagram-v-rossii-posle-blokirovki-snizilas-na-16-im-vse-eshche-polzuyutsya-bolee-30-mln-chelovek" data-gtm="Feed Item — Date — Click">
-                <time class="time" air-module="module.date" data-date="1647762567" data-type="medium" title="20.03.2022 10:49:27 (Europe/Moscow)">8&nbsp;часов</time>            </a>
-        
-                
-                
-    </div>
-
-    <div class="content-header__spacer"></div>
-
-        
-                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
-                        
-
-<vue name="layout-subscribe-button">
-  <textarea hidden class="l-hidden">
-      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:199129,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
-</vue>
-        </div>
-    
-        
-</div>
-
-
-<div class="
-    content
-    content--short
-                    ">
-    <div class="content-container">
-                    <div class="content-title content-title--short l-island-a">
-                                    Mediascope: аудитория Instagram в России после блокировки снизилась на 16% — им всё ещё пользуются более 30 млн <span class="content-title__last-word">человек 
+                                    Бывший руководитель «Яндекс.Новостей» Лев Гершензон объявил о планах запустить новостной <span class="content-title__last-word">агрегатор 
 <a href="/editorial">
     <span class="content-editorial-tick">
         <span>Статьи редакции</span>
@@ -1795,43 +1637,14 @@ data-location="my-feed"
                     <div class="l-island-a">
     
         
-            <p>Это только первые данные, и падение может увеличиться, но в день блокировки соцсеть даже достигла пика посещаемости. Mediascope посчитал аудиторию и других сервисов в России.</p>
+            <p>Он должен будет рассказывать «главное о главном» большому количеству людей.</p>
         
     </div>
-
-    
-<figure class="figure-image">
-
-    <div class="l-island-b">
-        <div class="content-image content-image--with_background content-image--thin_feed">
-            
-<div
-    class="andropov_image "
-    style="max-height: 600px;max-width: 609px;"
-    air-module="module.andropov"
-    data-andropov-type="image"
-    data-image-width="1200"
-    data-image-height="1183"
-    data-image-max-width="609"    data-image-max-height="600"    data-image-title="Инфографика РБК"        data-image-src="https://leonardo.osnova.io/5b879d15-b927-5bf0-bdb0-53a0abf96e0c/">
-
-    <div class="andropov_image__inner" style=";padding-bottom: 98.5804%;background: linear-gradient(90deg, #296c56, #29596c);"></div>
-</div>
-        </div>
-    </div>
-
-            <div class="l-island-a">
-            <figcaption class="content-image-caption">
-                                    <span class="content-image-caption__title">
-                        Инфографика РБК                    </span>
-                            </figcaption>
-        </div>
-    
-</figure>
         
             </div>
 
     
-    <a class="content-link" href="https://vc.ru/social/383458-mediascope-auditoriya-instagram-v-rossii-posle-blokirovki-snizilas-na-16-im-vse-eshche-polzuyutsya-bolee-30-mln-chelovek" data-analytics="Feed Item"></a>
+    <a class="content-link" href="https://vc.ru/services/389339-byvshiy-rukovoditel-yandeks-novostey-lev-gershenzon-obyavil-o-planah-zapustit-novostnoy-agregator" data-analytics="Feed Item"></a>
 </div>
 
 
@@ -1844,13 +1657,13 @@ data-location="my-feed"
             {
     "lastComments": [
         {
-            "photo": "https:\/\/leonardo.osnova.io\/a12ae271-cfe4-5200-bcf5-c94daf3a1f44\/"
+            "photo": "https:\/\/leonardo.osnova.io\/f6627a19-097b-594f-8c3b-bcc0288a9751\/"
         },
         {
-            "photo": "https:\/\/leonardo.osnova.io\/ef591a8f-4750-b190-7ad7-5b3450849621\/"
+            "photo": "https:\/\/leonardo.osnova.io\/922ece62-440c-bf88-e77a-bca9c5c0e249\/"
         },
         {
-            "photo": "https:\/\/leonardo.osnova.io\/f284624f-14cd-4b81-fd43-4ebeb8a4bcb9\/"
+            "photo": "https:\/\/leonardo.osnova.io\/5eecc5ac-c7a4-cbc5-2848-38f907ac0b3c\/"
         }
     ]
 }        </textarea>
@@ -1859,7 +1672,7 @@ data-location="my-feed"
       
 <vue name="comments-counter">
     <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383458,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/social\/383458-mediascope-auditoriya-instagram-v-rossii-posle-blokirovki-snizilas-na-16-im-vse-eshche-polzuyutsya-bolee-30-mln-chelovek&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:247}    </textarea>
+        {&quot;id&quot;:389339,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/services\/389339-byvshiy-rukovoditel-yandeks-novostey-lev-gershenzon-obyavil-o-planah-zapustit-novostnoy-agregator&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:47}    </textarea>
 </vue>
     </div>
   
@@ -1868,7 +1681,7 @@ data-location="my-feed"
       
 <vue name="bookmark">
     <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383458,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+        {&quot;id&quot;:389339,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
 </vue>
     </div>
   
@@ -1879,7 +1692,7 @@ data-location="my-feed"
 
 <vue name="layout-shares">
     <textarea hidden>
-        {"id":383458,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+        {"id":389339,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
 </vue>
 
 <!--/noindex-->
@@ -1888,32 +1701,177 @@ data-location="my-feed"
   
         <div class="content-footer__item content-footer__item--right">
             
-<div class="vote vote--content vote--sum-positive"
-     air-module="module.votes"
-     data-id="383458"
-     data-type="1"
-     data-type-str="content"
-     data-symbols="—|–"
-     data-state="0"
-     data-with-users="1"
-     data-content-id="383458"
-     data-subsite-id="199129"
-     data-subsite-name="Соцсети"
-     data-subsite-avatar="https://leonardo.osnova.io/cccbcc79-da83-51d9-b67a-b1284ba60093/"
-     data-subsite-url="https://vc.ru/social"
-     data-subsite-type="2"
-     data-place="feed"
-            data-count="46"
-        >
-    <div class="vote__button vote__button--minus">
-        <svg class="icon icon--v_arrow_down" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_down"></use></svg>    </div>
-
-    <div class="vote__value" data-value-real="46">
-        46    </div>
-
-    <div class="vote__button vote__button--plus">
-        <svg class="icon icon--v_arrow_up" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_up"></use></svg>    </div>
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:389339,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:389339,&quot;subsite&quot;:{&quot;id&quot;:200396,&quot;name&quot;:&quot;\u0421\u0435\u0440\u0432\u0438\u0441\u044b&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/158fab2d-76c1-5ed8-898a-76ee48d4c795\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/services&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:18}}    </textarea>
+</vue>
+    </div>
+  
 </div>
+</div>
+
+
+<div
+class="l-mb-28 lm-mb-20 content-feed content-feed--blanc content-feed--388823 l-island-bg l-island-round"
+air-module="module.entry"
+air-click="feed_item_clicked?content_id=388823"
+air-entry-type="short"
+data-feed-item-id="content_388823"
+data-content-id="388823"
+data-publish-date="1648455362"
+data-location="my-feed"
+>
+    
+
+
+
+
+<div class="
+    content-header
+    content-header--short
+        content-header--anon        l-island-a
+">
+    <div class="content-header__info">
+
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/blanc" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/e8a0f508-1ecd-58f2-b2a7-22dd61d48a34/-/scale_crop/64x64/')"></div>
+
+                <div class="content-header-author__name">
+                    Бланк                </div>
+
+                                    <div class="content-header-author__approved">
+                        
+<span class="approved_user" title="Официальная страница">
+    <svg class="icon icon--ui_verified" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#ui_verified"></use></svg></span>
+                    </div>
+                            </a>
+        
+                
+                            <a class="content-header__item content-header-number" href="https://vc.ru/blanc/388823-obnovleniy-i-fishek-hvatit-na-novyy-startap-blank-dlya-biznesa-uverenno-nachinaet-2022-god" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648455362" data-type="medium" title="28.03.2022 11:16:02 (Europe/Moscow)">вчера</time>            </a>
+        
+                
+                
+    </div>
+
+    <div class="content-header__spacer"></div>
+
+        
+                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
+                        
+
+<vue name="layout-subscribe-button">
+  <textarea hidden class="l-hidden">
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:971265,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+</vue>
+        </div>
+    
+        
+</div>
+
+
+<div class="
+    content
+    content--short
+                    ">
+    <div class="content-container">
+                    <div class="content-title content-title--short l-island-a">
+                                    Обновлений и фишек хватит на новый стартап: «Бланк» для бизнеса уверенно начинает 2022 год                            </div>
+        
+                    
+    
+<figure class="figure-image">
+
+    <div class="l-island-b">
+        <div class="content-image">
+            
+<div
+    class="andropov_image "
+    style="max-height: 600px;max-width: 1200px;"
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-width="2560"
+    data-image-height="1280"
+    data-image-max-width="1200"    data-image-max-height="600"            data-image-src="https://leonardo.osnova.io/1e98518c-7bee-5770-8e2a-a3577a1fb87e/">
+
+    <div class="andropov_image__inner" style=";padding-bottom: 50.0000%;background: linear-gradient(90deg, #cfc9c8, #cfcdc8);"></div>
+</div>
+        </div>
+    </div>
+
+    
+</figure>
+<div class="l-island-a">
+    
+        
+            <p>Прошло почти 3 месяца с начала 2022 года и мы готовы поделиться с вами списком обновлений, который мы успели сделать за это время. Спойлер: долгожданные интеграции, больше возможностей для работы со счётом, выпуск пластиковых карт и многое другое. Рассказываем, что и как.</p>
+        
+    </div>
+        
+            </div>
+
+    
+    <a class="content-link" href="https://vc.ru/blanc/388823-obnovleniy-i-fishek-hvatit-na-novyy-startap-blank-dlya-biznesa-uverenno-nachinaet-2022-god" data-analytics="Feed Item"></a>
+</div>
+
+
+
+
+<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
+
+  
+      <textarea air-settings>
+            {
+    "lastComments": [
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/4c786d5f-3b2e-54d2-a741-9416c35a45a8\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/ea0b8ba4-ec02-59d6-b408-410dffce2bfe\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/ffaea3bc-8945-f1c8-4496-459485810dbd\/"
+        }
+    ]
+}        </textarea>
+  
+        <div class="content-footer__item">
+      
+<vue name="comments-counter">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:388823,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/blanc\/388823-obnovleniy-i-fishek-hvatit-na-novyy-startap-blank-dlya-biznesa-uverenno-nachinaet-2022-god&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:45}    </textarea>
+</vue>
+    </div>
+  
+    
+        <div class="content-footer__item content-footer__item--shrink">
+      
+<vue name="bookmark">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:388823,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+</vue>
+    </div>
+  
+        <div class="content-footer__item content-footer__item--share ">
+      
+<!--googleoff: all-->
+<!--noindex-->
+
+<vue name="layout-shares">
+    <textarea hidden>
+        {"id":388823,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+</vue>
+
+<!--/noindex-->
+<!--googleon: all-->
+    </div>
+  
+        <div class="content-footer__item content-footer__item--right">
+            
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:388823,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:388823,&quot;subsite&quot;:{&quot;id&quot;:971265,&quot;name&quot;:&quot;\u0411\u043b\u0430\u043d\u043a&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/e8a0f508-1ecd-58f2-b2a7-22dd61d48a34\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/blanc&quot;,&quot;type&quot;:1},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:32}}    </textarea>
+</vue>
     </div>
   
 </div>
@@ -1976,13 +1934,13 @@ data-location="my-feed"
                 
                 
 <div
-class="l-mb-28 lm-mb-20 content-feed content-feed--claim content-feed--383539 l-island-bg l-island-round"
+class="l-mb-28 lm-mb-20 content-feed content-feed--food content-feed--389201 l-island-bg l-island-round"
 air-module="module.entry"
-air-click="feed_item_clicked?content_id=383539"
+air-click="feed_item_clicked?content_id=389201"
 air-entry-type="short"
-data-feed-item-id="content_383539"
-data-content-id="383539"
-data-publish-date="1647780277"
+data-feed-item-id="content_389201"
+data-content-id="389201"
+data-publish-date="1648475880"
 data-location="my-feed"
 >
     
@@ -1997,22 +1955,22 @@ data-location="my-feed"
 ">
     <div class="content-header__info">
 
-                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/claim" data-gtm="Feed Item — Subsite Name — Click">
-                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/08ff68ad-2175-51fb-8adc-a56f40ac6ffa/-/scale_crop/64x64/')"></div>
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/food" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/731bef55-3a41-560b-869e-eecca298a4a2/-/scale_crop/64x64/')"></div>
 
                 <div class="content-header-author__name">
-                    Приёмная                </div>
+                    Еда                </div>
 
                             </a>
         
-                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/704329-mirza-akhundov" data-gtm="Feed Item — Author Name — Click">
+                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/-1-tureckiy-kran" data-gtm="Feed Item — Author Name — Click">
                 <div class="content-header-author__name">
-                    Mirza Akhundov                </div>
+                    Турецкий кран                </div>
 
                             </a>
         
-                            <a class="content-header__item content-header-number" href="https://vc.ru/claim/383539-softline-otmena-oplachennogo-zakaza-v-odnostoronnem-poryadke" data-gtm="Feed Item — Date — Click">
-                <time class="time" air-module="module.date" data-date="1647780277" data-type="medium" title="20.03.2022 15:44:37 (Europe/Moscow)">3&nbsp;часа</time>            </a>
+                            <a class="content-header__item content-header-number" href="https://vc.ru/food/389201-pivovarennye-kompanii-heineken-i-carlsberg-prodadut-biznes-v-rossii" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648475880" data-type="medium" title="28.03.2022 16:58:00 (Europe/Moscow)">вчера</time>            </a>
         
                 
                 
@@ -2026,7 +1984,7 @@ data-location="my-feed"
 
 <vue name="layout-subscribe-button">
   <textarea hidden class="l-hidden">
-      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:199124,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:199128,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
 </vue>
         </div>
     
@@ -2040,485 +1998,7 @@ data-location="my-feed"
                     ">
     <div class="content-container">
                     <div class="content-title content-title--short l-island-a">
-                                    «Softline» отмена оплаченного заказа в одностороннем порядке                            </div>
-        
-                    <div class="l-island-a">
-    
-        
-            <p>Привет vc.ru, я за советом.<br />25.02.2022 в <a href="https://store.softline.ru/" rel="nofollow noreferrer noopener" target="_blank">интернет-магазине</a> Softline мною был оформлен (не оплачен) заказ №S0005609767 на Ноутбук Apple MacBook Air 2020 (M1) 13-inch с применением промокода на скидку. Планируемая дата доставки 1.03 Прикладываю скрин из почты:</p>
-        
-    </div>
-        
-            </div>
-
-    
-    <a class="content-link" href="https://vc.ru/claim/383539-softline-otmena-oplachennogo-zakaza-v-odnostoronnem-poryadke" data-analytics="Feed Item"></a>
-</div>
-
-
-
-
-<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
-
-  
-      <textarea air-settings>
-            {
-    "lastComments": [
-        {
-            "photo": "https:\/\/leonardo.osnova.io\/2319b740-b96c-449b-a98a-1676cda2e507\/"
-        }
-    ]
-}        </textarea>
-  
-        <div class="content-footer__item">
-      
-<vue name="comments-counter">
-    <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383539,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/claim\/383539-softline-otmena-oplachennogo-zakaza-v-odnostoronnem-poryadke&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:7}    </textarea>
-</vue>
-    </div>
-  
-    
-        <div class="content-footer__item content-footer__item--shrink">
-      
-<vue name="bookmark">
-    <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383539,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
-</vue>
-    </div>
-  
-        <div class="content-footer__item content-footer__item--share ">
-      
-<!--googleoff: all-->
-<!--noindex-->
-
-<vue name="layout-shares">
-    <textarea hidden>
-        {"id":383539,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
-</vue>
-
-<!--/noindex-->
-<!--googleon: all-->
-    </div>
-  
-        <div class="content-footer__item content-footer__item--right">
-            
-<div class="vote vote--content vote--sum-positive"
-     air-module="module.votes"
-     data-id="383539"
-     data-type="1"
-     data-type-str="content"
-     data-symbols="—|–"
-     data-state="0"
-     data-with-users="1"
-     data-content-id="383539"
-     data-subsite-id="199124"
-     data-subsite-name="Приёмная"
-     data-subsite-avatar="https://leonardo.osnova.io/08ff68ad-2175-51fb-8adc-a56f40ac6ffa/"
-     data-subsite-url="https://vc.ru/claim"
-     data-subsite-type="2"
-     data-place="feed"
-            data-count="7"
-        >
-    <div class="vote__button vote__button--minus">
-        <svg class="icon icon--v_arrow_down" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_down"></use></svg>    </div>
-
-    <div class="vote__value" data-value-real="7">
-        7    </div>
-
-    <div class="vote__button vote__button--plus">
-        <svg class="icon icon--v_arrow_up" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_up"></use></svg>    </div>
-</div>
-    </div>
-  
-</div>
-</div>
-
-
-<div
-class="l-mb-28 lm-mb-20 content-feed content-feed--claim content-feed--383537 l-island-bg l-island-round"
-air-module="module.entry"
-air-click="feed_item_clicked?content_id=383537"
-air-entry-type="short"
-data-feed-item-id="content_383537"
-data-content-id="383537"
-data-publish-date="1647774766"
-data-location="my-feed"
->
-    
-
-
-
-
-<div class="
-    content-header
-    content-header--short
-        content-header--anon        l-island-a
-">
-    <div class="content-header__info">
-
-                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/claim" data-gtm="Feed Item — Subsite Name — Click">
-                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/08ff68ad-2175-51fb-8adc-a56f40ac6ffa/-/scale_crop/64x64/')"></div>
-
-                <div class="content-header-author__name">
-                    Приёмная                </div>
-
-                            </a>
-        
-                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/1110851-marina-i-aleksandr" data-gtm="Feed Item — Author Name — Click">
-                <div class="content-header-author__name">
-                    Марина и Александр                </div>
-
-                            </a>
-        
-                            <a class="content-header__item content-header-number" href="https://vc.ru/claim/383537-tinkoff-ne-otvechaet-za-dostavku-swift-perevodov-planiruetsya-gruppovaya-podacha-zayavleniya-v-gos-organy-na-tinkoff" data-gtm="Feed Item — Date — Click">
-                <time class="time" air-module="module.date" data-date="1647774766" data-type="medium" title="20.03.2022 14:12:46 (Europe/Moscow)">4&nbsp;часа</time>            </a>
-        
-                
-                
-    </div>
-
-    <div class="content-header__spacer"></div>
-
-        
-                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
-                        
-
-<vue name="layout-subscribe-button">
-  <textarea hidden class="l-hidden">
-      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:199124,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
-</vue>
-        </div>
-    
-        
-</div>
-
-
-<div class="
-    content
-    content--short
-                    ">
-    <div class="content-container">
-                    <div class="content-title content-title--short l-island-a">
-                                    «Тинькофф» не отвечает за доставку SWIFT-переводов. Планируется групповая подача заявления в Гос. органы на Тинькофф                            </div>
-        
-                    <div class="l-island-a">
-    
-        
-            <p>Пишу со странички жены.<br />Еще 28.02 мне со стороны работодателя в Литве был сделан перевод в Тинькофф банк на сумму 1054$, сегодня уже 20.03 деньги до меня так и не дошли. Со стороны банка корреспондента перевод ушел в РФ почти 2 недели назад, но тинькофф до сих-пор пишет что денег он не получил !<br />На все мои просьбы найти деньги, Тинькофф…</p>
-        
-    </div>
-        
-            </div>
-
-    
-    <a class="content-link" href="https://vc.ru/claim/383537-tinkoff-ne-otvechaet-za-dostavku-swift-perevodov-planiruetsya-gruppovaya-podacha-zayavleniya-v-gos-organy-na-tinkoff" data-analytics="Feed Item"></a>
-</div>
-
-
-
-
-<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
-
-  
-      <textarea air-settings>
-            {
-    "lastComments": [
-        {
-            "photo": "https:\/\/leonardo.osnova.io\/4598e099-d95e-6575-2a94-d329e09bea0f\/"
-        },
-        {
-            "photo": "https:\/\/leonardo.osnova.io\/9a6beb86-0606-8ac2-34f9-e058b8623b82\/"
-        },
-        {
-            "photo": "https:\/\/leonardo.osnova.io\/7ced5174-7575-1703-897c-fad2fcc89c4c\/"
-        }
-    ]
-}        </textarea>
-  
-        <div class="content-footer__item">
-      
-<vue name="comments-counter">
-    <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383537,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/claim\/383537-tinkoff-ne-otvechaet-za-dostavku-swift-perevodov-planiruetsya-gruppovaya-podacha-zayavleniya-v-gos-organy-na-tinkoff&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:78}    </textarea>
-</vue>
-    </div>
-  
-    
-        <div class="content-footer__item content-footer__item--shrink">
-      
-<vue name="bookmark">
-    <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383537,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
-</vue>
-    </div>
-  
-        <div class="content-footer__item content-footer__item--share ">
-      
-<!--googleoff: all-->
-<!--noindex-->
-
-<vue name="layout-shares">
-    <textarea hidden>
-        {"id":383537,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
-</vue>
-
-<!--/noindex-->
-<!--googleon: all-->
-    </div>
-  
-        <div class="content-footer__item content-footer__item--right">
-            
-<div class="vote vote--content vote--sum-positive"
-     air-module="module.votes"
-     data-id="383537"
-     data-type="1"
-     data-type-str="content"
-     data-symbols="—|–"
-     data-state="0"
-     data-with-users="1"
-     data-content-id="383537"
-     data-subsite-id="199124"
-     data-subsite-name="Приёмная"
-     data-subsite-avatar="https://leonardo.osnova.io/08ff68ad-2175-51fb-8adc-a56f40ac6ffa/"
-     data-subsite-url="https://vc.ru/claim"
-     data-subsite-type="2"
-     data-place="feed"
-            data-count="26"
-        >
-    <div class="vote__button vote__button--minus">
-        <svg class="icon icon--v_arrow_down" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_down"></use></svg>    </div>
-
-    <div class="vote__value" data-value-real="26">
-        26    </div>
-
-    <div class="vote__button vote__button--plus">
-        <svg class="icon icon--v_arrow_up" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_up"></use></svg>    </div>
-</div>
-    </div>
-  
-</div>
-</div>
-
-
-<div
-class="l-mb-28 lm-mb-20 content-feed content-feed--claim content-feed--383573 l-island-bg l-island-round"
-air-module="module.entry"
-air-click="feed_item_clicked?content_id=383573"
-air-entry-type="short"
-data-feed-item-id="content_383573"
-data-content-id="383573"
-data-publish-date="1647780959"
-data-location="my-feed"
->
-    
-
-
-
-
-<div class="
-    content-header
-    content-header--short
-        content-header--anon        l-island-a
-">
-    <div class="content-header__info">
-
-                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/claim" data-gtm="Feed Item — Subsite Name — Click">
-                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/08ff68ad-2175-51fb-8adc-a56f40ac6ffa/-/scale_crop/64x64/')"></div>
-
-                <div class="content-header-author__name">
-                    Приёмная                </div>
-
-                            </a>
-        
-                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/878893-sergei-kashtyev" data-gtm="Feed Item — Author Name — Click">
-                <div class="content-header-author__name">
-                    Sergei Kashtyev                </div>
-
-                            </a>
-        
-                            <a class="content-header__item content-header-number" href="https://vc.ru/claim/383573-bankomat-vtb-dengi-prinyal-no-na-schet-ne-zachislil" data-gtm="Feed Item — Date — Click">
-                <time class="time" air-module="module.date" data-date="1647780959" data-type="medium" title="20.03.2022 15:55:59 (Europe/Moscow)">2&nbsp;часа</time>            </a>
-        
-                
-                
-    </div>
-
-    <div class="content-header__spacer"></div>
-
-        
-                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
-                        
-
-<vue name="layout-subscribe-button">
-  <textarea hidden class="l-hidden">
-      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:199124,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
-</vue>
-        </div>
-    
-        
-</div>
-
-
-<div class="
-    content
-    content--short
-                    ">
-    <div class="content-container">
-                    <div class="content-title content-title--short l-island-a">
-                                    Банкомат ВТБ деньги принял, но на счёт не зачислил                            </div>
-        
-                    <div class="l-island-a">
-    
-        
-            <p>13.03 решил положить свои сбережения (215к рублей) на счёт в ВТБ через банкомат. Вставил карту, выбрал на мониторе "пополнить", и в открывшийся лоток положил всю сумму. После того как лоток закрылся, банкомат начал их отсчитывать, и буквально через несколько секунд на мониторе появилась надпись с примерным содержанием "операция не может быть…</p>
-        
-    </div>
-        
-            </div>
-
-    
-    <a class="content-link" href="https://vc.ru/claim/383573-bankomat-vtb-dengi-prinyal-no-na-schet-ne-zachislil" data-analytics="Feed Item"></a>
-</div>
-
-
-
-
-<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
-
-  
-  
-        <div class="content-footer__item">
-      
-<vue name="comments-counter">
-    <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383573,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/claim\/383573-bankomat-vtb-dengi-prinyal-no-na-schet-ne-zachislil&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:1}    </textarea>
-</vue>
-    </div>
-  
-    
-        <div class="content-footer__item content-footer__item--shrink">
-      
-<vue name="bookmark">
-    <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383573,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
-</vue>
-    </div>
-  
-        <div class="content-footer__item content-footer__item--share ">
-      
-<!--googleoff: all-->
-<!--noindex-->
-
-<vue name="layout-shares">
-    <textarea hidden>
-        {"id":383573,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
-</vue>
-
-<!--/noindex-->
-<!--googleon: all-->
-    </div>
-  
-        <div class="content-footer__item content-footer__item--right">
-            
-<div class="vote vote--content vote--sum-positive"
-     air-module="module.votes"
-     data-id="383573"
-     data-type="1"
-     data-type-str="content"
-     data-symbols="—|–"
-     data-state="0"
-     data-with-users="1"
-     data-content-id="383573"
-     data-subsite-id="199124"
-     data-subsite-name="Приёмная"
-     data-subsite-avatar="https://leonardo.osnova.io/08ff68ad-2175-51fb-8adc-a56f40ac6ffa/"
-     data-subsite-url="https://vc.ru/claim"
-     data-subsite-type="2"
-     data-place="feed"
-            data-count="7"
-        >
-    <div class="vote__button vote__button--minus">
-        <svg class="icon icon--v_arrow_down" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_down"></use></svg>    </div>
-
-    <div class="vote__value" data-value-real="7">
-        7    </div>
-
-    <div class="vote__button vote__button--plus">
-        <svg class="icon icon--v_arrow_up" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_up"></use></svg>    </div>
-</div>
-    </div>
-  
-</div>
-</div>
-
-
-<div
-class="l-mb-28 lm-mb-20 content-feed content-feed--books content-feed--383500 l-island-bg l-island-round"
-air-module="module.entry"
-air-click="feed_item_clicked?content_id=383500"
-air-entry-type="short"
-data-feed-item-id="content_383500"
-data-content-id="383500"
-data-publish-date="1647787582"
-data-location="my-feed"
->
-    
-
-
-
-
-<div class="
-    content-header
-    content-header--short
-        content-header--anon        l-island-a
-">
-    <div class="content-header__info">
-
-                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/books" data-gtm="Feed Item — Subsite Name — Click">
-                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/ea031f0b-5e28-5955-bbd1-6c5c84ac496d/-/scale_crop/64x64/')"></div>
-
-                <div class="content-header-author__name">
-                    Что почитать                </div>
-
-                            </a>
-        
-                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/171398-slava-shegay" data-gtm="Feed Item — Author Name — Click">
-                <div class="content-header-author__name">
-                    Слава Шегай                </div>
-
-                            </a>
-        
-                            <a class="content-header__item content-header-number" href="https://vc.ru/books/383500-kak-ya-mog-predpolozhit-chto-disney-mozhet-kupit-takuyu-kompaniyu-kak-pixar-kak-bob-ayger-ustroil-sdelku-na-7-4-mlrd" data-gtm="Feed Item — Date — Click">
-                <time class="time" air-module="module.date" data-date="1647787582" data-type="medium" title="20.03.2022 17:46:22 (Europe/Moscow)">1&nbsp;час</time>            </a>
-        
-                
-                
-    </div>
-
-    <div class="content-header__spacer"></div>
-
-        
-                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
-                        
-
-<vue name="layout-subscribe-button">
-  <textarea hidden class="l-hidden">
-      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:345049,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
-</vue>
-        </div>
-    
-        
-</div>
-
-
-<div class="
-    content
-    content--short
-                    ">
-    <div class="content-container">
-                    <div class="content-title content-title--short l-island-a">
-                                    «Как я мог предположить, что Disney может купить такую компанию, как Pixar?»: как Боб Айгер устроил сделку на $7,4 <span class="content-title__last-word">млрд 
+                                    Пивоваренные компании Heineken и Carlsberg продадут бизнес в <span class="content-title__last-word">России 
 <a href="/editorial">
     <span class="content-editorial-tick">
         <span>Статьи редакции</span>
@@ -2529,7 +2009,1048 @@ data-location="my-feed"
                     <div class="l-island-a">
     
         
-            <p>Отрывок из книги бывшего гендиректора Disney Роберта Айгера «<a href="https://eksmo.ru/book/doroga-dlinoyu-v-zhizn-chemu-ya-nauchilsya-za-15-let-na-postu-glavy-walt-disney-company-ITD1115434/" rel="nofollow noreferrer noopener" target="_blank">Умение предвидеть</a>», которую 31 марта выпустит издательство «Бомбора».</p>
+            <p>Они производят пиво «Жигулёвское», «Балтика», Carlsberg, Tuborg и другие.</p>
+        
+    </div>
+        
+            </div>
+
+    
+    <a class="content-link" href="https://vc.ru/food/389201-pivovarennye-kompanii-heineken-i-carlsberg-prodadut-biznes-v-rossii" data-analytics="Feed Item"></a>
+</div>
+
+
+
+
+<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
+
+  
+      <textarea air-settings>
+            {
+    "lastComments": [
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/4727c995-4b04-52fd-b225-cade06ab022a\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/1d6a6afe-b0d0-5232-94bb-567b04636fd9\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/a14fd3bc-66ac-1869-8095-3bbdadb65014\/"
+        }
+    ]
+}        </textarea>
+  
+        <div class="content-footer__item">
+      
+<vue name="comments-counter">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389201,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/food\/389201-pivovarennye-kompanii-heineken-i-carlsberg-prodadut-biznes-v-rossii&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:192}    </textarea>
+</vue>
+    </div>
+  
+    
+        <div class="content-footer__item content-footer__item--shrink">
+      
+<vue name="bookmark">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389201,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+</vue>
+    </div>
+  
+        <div class="content-footer__item content-footer__item--share ">
+      
+<!--googleoff: all-->
+<!--noindex-->
+
+<vue name="layout-shares">
+    <textarea hidden>
+        {"id":389201,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+</vue>
+
+<!--/noindex-->
+<!--googleon: all-->
+    </div>
+  
+        <div class="content-footer__item content-footer__item--right">
+            
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:389201,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:389201,&quot;subsite&quot;:{&quot;id&quot;:199128,&quot;name&quot;:&quot;\u0415\u0434\u0430&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/731bef55-3a41-560b-869e-eecca298a4a2\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/food&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:24}}    </textarea>
+</vue>
+    </div>
+  
+</div>
+</div>
+
+
+<div
+class="l-mb-28 lm-mb-20 content-feed content-feed--claim content-feed--389062 l-island-bg l-island-round"
+air-module="module.entry"
+air-click="feed_item_clicked?content_id=389062"
+air-entry-type="short"
+data-feed-item-id="content_389062"
+data-content-id="389062"
+data-publish-date="1648470771"
+data-location="my-feed"
+>
+    
+
+
+
+
+<div class="
+    content-header
+    content-header--short
+        content-header--anon        l-island-a
+">
+    <div class="content-header__info">
+
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/claim" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/08ff68ad-2175-51fb-8adc-a56f40ac6ffa/-/scale_crop/64x64/')"></div>
+
+                <div class="content-header-author__name">
+                    Приёмная                </div>
+
+                            </a>
+        
+                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/197969-viktoria-moga" data-gtm="Feed Item — Author Name — Click">
+                <div class="content-header-author__name">
+                    Viktoria Moga                </div>
+
+                            </a>
+        
+                            <a class="content-header__item content-header-number" href="https://vc.ru/claim/389062-fotograf-na-avito-servis-otkazal-klientke-v-moey-fotosessii" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648470771" data-type="medium" title="28.03.2022 15:32:51 (Europe/Moscow)">вчера</time>            </a>
+        
+                
+                
+    </div>
+
+    <div class="content-header__spacer"></div>
+
+        
+                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
+                        
+
+<vue name="layout-subscribe-button">
+  <textarea hidden class="l-hidden">
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:199124,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+</vue>
+        </div>
+    
+        
+</div>
+
+
+<div class="
+    content
+    content--short
+                    ">
+    <div class="content-container">
+                    <div class="content-title content-title--short l-island-a">
+                                    Фотограф на Avito: сервис отказал клиентке в моей фотосессии                            </div>
+        
+                    <div class="l-island-a">
+    
+        
+            <p>Я Виктория, фотограф из Санкт-Петербурга, и я теперь знаю, как найти клиента на Авито и сразу его потерять.</p>
+        
+    </div>
+        
+            </div>
+
+    
+    <a class="content-link" href="https://vc.ru/claim/389062-fotograf-na-avito-servis-otkazal-klientke-v-moey-fotosessii" data-analytics="Feed Item"></a>
+</div>
+
+
+
+
+<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
+
+  
+      <textarea air-settings>
+            {
+    "lastComments": [
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/6b071ad7-964f-5140-9b36-4fffc2dce8a0\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/2cc2cbb0-eae4-5c8e-9c2d-fdbf57869e95\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/0b793313-3f5b-ec0e-f83c-3d4909581c87\/"
+        }
+    ]
+}        </textarea>
+  
+        <div class="content-footer__item">
+      
+<vue name="comments-counter">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389062,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/claim\/389062-fotograf-na-avito-servis-otkazal-klientke-v-moey-fotosessii&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:52}    </textarea>
+</vue>
+    </div>
+  
+    
+        <div class="content-footer__item content-footer__item--shrink">
+      
+<vue name="bookmark">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389062,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+</vue>
+    </div>
+  
+        <div class="content-footer__item content-footer__item--share ">
+      
+<!--googleoff: all-->
+<!--noindex-->
+
+<vue name="layout-shares">
+    <textarea hidden>
+        {"id":389062,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+</vue>
+
+<!--/noindex-->
+<!--googleon: all-->
+    </div>
+  
+        <div class="content-footer__item content-footer__item--right">
+            
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:389062,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:389062,&quot;subsite&quot;:{&quot;id&quot;:199124,&quot;name&quot;:&quot;\u041f\u0440\u0438\u0451\u043c\u043d\u0430\u044f&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/08ff68ad-2175-51fb-8adc-a56f40ac6ffa\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/claim&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:77}}    </textarea>
+</vue>
+    </div>
+  
+</div>
+</div>
+
+
+<div
+class="l-mb-28 lm-mb-20 content-feed content-feed--evrone content-feed--389317 l-island-bg l-island-round"
+air-module="module.entry"
+air-click="feed_item_clicked?content_id=389317"
+air-entry-type="short"
+data-feed-item-id="content_389317"
+data-content-id="389317"
+data-publish-date="1648482251"
+data-location="my-feed"
+>
+    
+
+
+
+
+<div class="
+    content-header
+    content-header--short
+        content-header--anon        l-island-a
+">
+    <div class="content-header__info">
+
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/evrone" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/afed10ed-54e6-3730-31b8-24be6f249234/-/scale_crop/64x64/')"></div>
+
+                <div class="content-header-author__name">
+                    Evrone                </div>
+
+                                    <div class="content-header-author__approved">
+                        
+<span class="approved_user" title="Официальная страница">
+    <svg class="icon icon--ui_verified" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#ui_verified"></use></svg></span>
+                    </div>
+                            </a>
+        
+                
+                            <a class="content-header__item content-header-number" href="https://vc.ru/evrone/389317-keys-viju-strimingovyy-servis-s-kinomami" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648482251" data-type="medium" title="28.03.2022 18:44:11 (Europe/Moscow)">вчера</time>            </a>
+        
+                
+                
+    </div>
+
+    <div class="content-header__spacer"></div>
+
+        
+                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
+                        
+
+<vue name="layout-subscribe-button">
+  <textarea hidden class="l-hidden">
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:250259,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+</vue>
+        </div>
+    
+        
+</div>
+
+
+<div class="
+    content
+    content--short
+                    ">
+    <div class="content-container">
+                    <div class="content-title content-title--short l-island-a">
+                                    Кейс viju: стриминговый сервис с киномами                            </div>
+        
+                    
+    
+<figure class="figure-image">
+
+    <div class="l-island-b">
+        <div class="content-image">
+            
+<div
+    class="andropov_image "
+    style="max-height: 600px;max-width: 1067px;"
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-width="1920"
+    data-image-height="1080"
+    data-image-max-width="1067"    data-image-max-height="600"            data-image-src="https://leonardo.osnova.io/6e21e804-f208-5c1b-8715-b108c41f7c09/">
+
+    <div class="andropov_image__inner" style=";padding-bottom: 56.2493%;background: linear-gradient(90deg, #081c1c, #08101c);"></div>
+</div>
+        </div>
+    </div>
+
+    
+</figure>
+<div class="l-island-a">
+    
+        
+            <p>viju - новый стриминговый сервис от группы Viasat. Помимо эксклюзивных премьер и большого пакета ТВ-каналов, он предлагает зрителю новый способ выбора контента - киномы. Это маленькие отрывки ключевых моментов фильмов и сериалов, которые помогают прочувствовать настроение фильма и определить, подходит ли он к просмотру. Мы в Evrone помогли не…</p>
+        
+    </div>
+        
+            </div>
+
+    
+    <a class="content-link" href="https://vc.ru/evrone/389317-keys-viju-strimingovyy-servis-s-kinomami" data-analytics="Feed Item"></a>
+</div>
+
+
+
+
+<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
+
+  
+  
+        <div class="content-footer__item">
+      
+<vue name="comments-counter">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389317,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/evrone\/389317-keys-viju-strimingovyy-servis-s-kinomami&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:4}    </textarea>
+</vue>
+    </div>
+  
+    
+        <div class="content-footer__item content-footer__item--shrink">
+      
+<vue name="bookmark">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389317,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+</vue>
+    </div>
+  
+        <div class="content-footer__item content-footer__item--share ">
+      
+<!--googleoff: all-->
+<!--noindex-->
+
+<vue name="layout-shares">
+    <textarea hidden>
+        {"id":389317,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+</vue>
+
+<!--/noindex-->
+<!--googleon: all-->
+    </div>
+  
+        <div class="content-footer__item content-footer__item--right">
+            
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:389317,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:389317,&quot;subsite&quot;:{&quot;id&quot;:250259,&quot;name&quot;:&quot;Evrone&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/afed10ed-54e6-3730-31b8-24be6f249234\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/evrone&quot;,&quot;type&quot;:1},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:1}}    </textarea>
+</vue>
+    </div>
+  
+</div>
+</div>
+
+
+<div
+class="l-mb-28 lm-mb-20 content-feed content-feed--social content-feed--389553 l-island-bg l-island-round"
+air-module="module.entry"
+air-click="feed_item_clicked?content_id=389553"
+air-entry-type="short"
+data-feed-item-id="content_389553"
+data-content-id="389553"
+data-publish-date="1648506601"
+data-location="my-feed"
+>
+    
+
+
+
+
+<div class="
+    content-header
+    content-header--short
+        content-header--anon        l-island-a
+">
+    <div class="content-header__info">
+
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/social" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/cccbcc79-da83-51d9-b67a-b1284ba60093/-/scale_crop/64x64/')"></div>
+
+                <div class="content-header-author__name">
+                    Соцсети                </div>
+
+                            </a>
+        
+                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/23006-sergey-komlev" data-gtm="Feed Item — Author Name — Click">
+                <div class="content-header-author__name">
+                    Сергей Комлев                </div>
+
+                            </a>
+        
+                            <a class="content-header__item content-header-number" href="https://vc.ru/social/389553-prototip-rossgrama-okazalsya-poddelkoy-so-stokov" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648506601" data-type="medium" title="29.03.2022 01:30:01 (Europe/Moscow)">5&nbsp;часов</time>            </a>
+        
+                
+                
+    </div>
+
+    <div class="content-header__spacer"></div>
+
+        
+                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
+                        
+
+<vue name="layout-subscribe-button">
+  <textarea hidden class="l-hidden">
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:199129,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+</vue>
+        </div>
+    
+        
+</div>
+
+
+<div class="
+    content
+    content--short
+                    ">
+    <div class="content-container">
+                    <div class="content-title content-title--short l-island-a">
+                                    Прототип Россграма оказался подделкой со стоков                            </div>
+        
+                    
+    
+<figure class="figure-image">
+
+    <div class="l-island-b">
+        <div class="content-image content-image--with_background content-image--with_border content-image--thin_feed">
+            
+<div
+    class="andropov_image "
+    style="max-height: 600px;max-width: 600px;"
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-width="1620"
+    data-image-height="1620"
+    data-image-max-width="600"    data-image-max-height="600"            data-image-src="https://leonardo.osnova.io/35976fde-3ebd-5c1a-8130-e8373b3450b7/">
+
+    <div class="andropov_image__inner" style=";padding-bottom: 100.0000%;background: linear-gradient(90deg, #27414b, #272b4b);"></div>
+</div>
+        </div>
+    </div>
+
+    
+</figure>
+<div class="l-island-a">
+    
+        
+            <p>Для запуска прототипа Россграма создатели проекта воспользовались PHP-скриптом 2018 года PixelPhoto, который свободно <a href="https://codecanyon.net/item/pixelphoto-the-ultimate-image-sharing-photo-social-network-platform/22293358" rel="nofollow noreferrer noopener" target="_blank">продаётся на сайте Codecanyon</a> всего за $69. </p>
+        
+    </div>
+        
+            </div>
+
+    
+    <a class="content-link" href="https://vc.ru/social/389553-prototip-rossgrama-okazalsya-poddelkoy-so-stokov" data-analytics="Feed Item"></a>
+</div>
+
+
+
+
+<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
+
+  
+      <textarea air-settings>
+            {
+    "lastComments": [
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/9b9ab378-470d-58a0-b092-f0dcd2c22cb5\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/51f49f2c-38fd-7ea8-2291-5bd812969842\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/7dfd4891-a0f6-518f-b763-92c2125509e7\/"
+        }
+    ]
+}        </textarea>
+  
+        <div class="content-footer__item">
+      
+<vue name="comments-counter">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389553,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/social\/389553-prototip-rossgrama-okazalsya-poddelkoy-so-stokov&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:5}    </textarea>
+</vue>
+    </div>
+  
+    
+        <div class="content-footer__item content-footer__item--shrink">
+      
+<vue name="bookmark">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389553,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+</vue>
+    </div>
+  
+        <div class="content-footer__item content-footer__item--share ">
+      
+<!--googleoff: all-->
+<!--noindex-->
+
+<vue name="layout-shares">
+    <textarea hidden>
+        {"id":389553,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+</vue>
+
+<!--/noindex-->
+<!--googleon: all-->
+    </div>
+  
+        <div class="content-footer__item content-footer__item--right">
+            
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:389553,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:389553,&quot;subsite&quot;:{&quot;id&quot;:199129,&quot;name&quot;:&quot;\u0421\u043e\u0446\u0441\u0435\u0442\u0438&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/cccbcc79-da83-51d9-b67a-b1284ba60093\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/social&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:10}}    </textarea>
+</vue>
+    </div>
+  
+</div>
+</div>
+
+
+<div
+class="l-mb-28 lm-mb-20 content-feed content-feed--design content-feed--389572 l-island-bg l-island-round"
+air-module="module.entry"
+air-click="feed_item_clicked?content_id=389572"
+air-entry-type="short"
+data-feed-item-id="content_389572"
+data-content-id="389572"
+data-publish-date="1648511889"
+data-location="my-feed"
+>
+    
+
+
+
+
+<div class="
+    content-header
+    content-header--short
+        content-header--anon        l-island-a
+">
+    <div class="content-header__info">
+
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/design" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/81132c2d-ddb6-0127-19d6-e1d1293194b1/-/scale_crop/64x64/')"></div>
+
+                <div class="content-header-author__name">
+                    Дизайн                </div>
+
+                            </a>
+        
+                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/1140650-anastasiya-zotova" data-gtm="Feed Item — Author Name — Click">
+                <div class="content-header-author__name">
+                    Анастасия Зотова                </div>
+
+                            </a>
+        
+                            <a class="content-header__item content-header-number" href="https://vc.ru/design/389572-odezhda-konstruktor-i-osoznannoe-potreblenie" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648511889" data-type="medium" title="29.03.2022 02:58:09 (Europe/Moscow)">4&nbsp;часа</time>            </a>
+        
+                
+                
+    </div>
+
+    <div class="content-header__spacer"></div>
+
+        
+                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
+                        
+
+<vue name="layout-subscribe-button">
+  <textarea hidden class="l-hidden">
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:199114,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+</vue>
+        </div>
+    
+        
+</div>
+
+
+<div class="
+    content
+    content--short
+                    ">
+    <div class="content-container">
+                    <div class="content-title content-title--short l-island-a">
+                                    Одежда-конструктор и осознанное потребление                            </div>
+        
+                    <div class="l-island-a">
+    
+        
+            <p>Осознанное потребление, мода, удобство и универсальность - как это все объединить?! Как покупая одну вещь в гардероб, получить в итоге две, а если две, то все шесть. Новый питерский бренд одежды PAZL&DRESS решает эту проблему, делая ставку на одежду-конструктор. </p>
+        
+    </div>
+
+    
+<figure class="figure-image">
+
+    <div class="l-island-b">
+        <div class="content-image content-image--thin_feed">
+            
+<div
+    class="andropov_image "
+    style="max-height: 600px;max-width: 600px;"
+    air-module="module.andropov"
+    data-andropov-type="image"
+    data-image-width="1080"
+    data-image-height="1080"
+    data-image-max-width="600"    data-image-max-height="600"            data-image-src="https://leonardo.osnova.io/1ea9f99f-8244-5f9d-ad71-4041aae57ad5/">
+
+    <div class="andropov_image__inner" style=";padding-bottom: 100.0000%;background: linear-gradient(90deg, #d8dcde, #d8d8de);"></div>
+</div>
+        </div>
+    </div>
+
+    
+</figure>
+        
+            </div>
+
+    
+    <a class="content-link" href="https://vc.ru/design/389572-odezhda-konstruktor-i-osoznannoe-potreblenie" data-analytics="Feed Item"></a>
+</div>
+
+
+
+
+<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
+
+  
+  
+        <div class="content-footer__item">
+      
+<vue name="comments-counter">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389572,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/design\/389572-odezhda-konstruktor-i-osoznannoe-potreblenie&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:3}    </textarea>
+</vue>
+    </div>
+  
+    
+        <div class="content-footer__item content-footer__item--shrink">
+      
+<vue name="bookmark">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389572,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+</vue>
+    </div>
+  
+        <div class="content-footer__item content-footer__item--share ">
+      
+<!--googleoff: all-->
+<!--noindex-->
+
+<vue name="layout-shares">
+    <textarea hidden>
+        {"id":389572,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+</vue>
+
+<!--/noindex-->
+<!--googleon: all-->
+    </div>
+  
+        <div class="content-footer__item content-footer__item--right">
+            
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:389572,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:389572,&quot;subsite&quot;:{&quot;id&quot;:199114,&quot;name&quot;:&quot;\u0414\u0438\u0437\u0430\u0439\u043d&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/81132c2d-ddb6-0127-19d6-e1d1293194b1\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/design&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:2}}    </textarea>
+</vue>
+    </div>
+  
+</div>
+</div>
+
+
+<div
+class="l-mb-28 lm-mb-20 content-feed content-feed--yota content-feed--388905 l-island-bg l-island-round"
+air-module="module.entry"
+air-click="feed_item_clicked?content_id=388905"
+air-entry-type="short"
+data-feed-item-id="content_388905"
+data-content-id="388905"
+data-publish-date="1648460591"
+data-location="my-feed"
+>
+    
+
+
+
+
+<div class="
+    content-header
+    content-header--short
+        content-header--anon        l-island-a
+">
+    <div class="content-header__info">
+
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/yota" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/afc535a6-a1fa-9058-4097-d5a392da1f99/-/scale_crop/64x64/')"></div>
+
+                <div class="content-header-author__name">
+                    Yota                </div>
+
+                                    <div class="content-header-author__approved">
+                        
+<span class="approved_user" title="Официальная страница">
+    <svg class="icon icon--ui_verified" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#ui_verified"></use></svg></span>
+                    </div>
+                            </a>
+        
+                
+                            <a class="content-header__item content-header-number" href="https://vc.ru/yota/388905-iphone-snova-v-tope-analitika-smartfonov-ot-yota" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648460591" data-type="medium" title="28.03.2022 12:43:11 (Europe/Moscow)">вчера</time>            </a>
+        
+                
+                
+    </div>
+
+    <div class="content-header__spacer"></div>
+
+        
+                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
+                        
+
+<vue name="layout-subscribe-button">
+  <textarea hidden class="l-hidden">
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:170761,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+</vue>
+        </div>
+    
+        
+</div>
+
+
+<div class="
+    content
+    content--short
+                    ">
+    <div class="content-container">
+                    <div class="content-title content-title--short l-island-a">
+                                    iPhone снова в топе: аналитика смартфонов от Yota                            </div>
+        
+                    <div class="l-island-a">
+    
+        
+            <p>Мобильный оператор Yota составил топ самых популярных брендов смартфонов среди своих пользователей.</p>
+        
+    </div>
+        
+            </div>
+
+    
+    <a class="content-link" href="https://vc.ru/yota/388905-iphone-snova-v-tope-analitika-smartfonov-ot-yota" data-analytics="Feed Item"></a>
+</div>
+
+
+
+
+<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
+
+  
+  
+        <div class="content-footer__item">
+      
+<vue name="comments-counter">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:388905,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/yota\/388905-iphone-snova-v-tope-analitika-smartfonov-ot-yota&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:15}    </textarea>
+</vue>
+    </div>
+  
+    
+        <div class="content-footer__item content-footer__item--shrink">
+      
+<vue name="bookmark">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:388905,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+</vue>
+    </div>
+  
+        <div class="content-footer__item content-footer__item--share ">
+      
+<!--googleoff: all-->
+<!--noindex-->
+
+<vue name="layout-shares">
+    <textarea hidden>
+        {"id":388905,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+</vue>
+
+<!--/noindex-->
+<!--googleon: all-->
+    </div>
+  
+        <div class="content-footer__item content-footer__item--right">
+            
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:388905,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:388905,&quot;subsite&quot;:{&quot;id&quot;:170761,&quot;name&quot;:&quot;Yota&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/afc535a6-a1fa-9058-4097-d5a392da1f99\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/yota&quot;,&quot;type&quot;:1},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:4}}    </textarea>
+</vue>
+    </div>
+  
+</div>
+</div>
+
+
+<div
+class="l-mb-28 lm-mb-20 content-feed content-feed--services content-feed--389139 l-island-bg l-island-round"
+air-module="module.entry"
+air-click="feed_item_clicked?content_id=389139"
+air-entry-type="short"
+data-feed-item-id="content_389139"
+data-content-id="389139"
+data-publish-date="1648475458"
+data-location="my-feed"
+>
+    
+
+
+
+
+<div class="
+    content-header
+    content-header--short
+        content-header--anon        l-island-a
+">
+    <div class="content-header__info">
+
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/services" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/158fab2d-76c1-5ed8-898a-76ee48d4c795/-/scale_crop/64x64/')"></div>
+
+                <div class="content-header-author__name">
+                    Сервисы                </div>
+
+                            </a>
+        
+                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/-1-slepoy-nikita" data-gtm="Feed Item — Author Name — Click">
+                <div class="content-header-author__name">
+                    Слепой Никита                </div>
+
+                            </a>
+        
+                            <a class="content-header__item content-header-number" href="https://vc.ru/services/389139-otrisovka-id-bronirovanie-oteley-i-chernyy-rynok-kreditov-kak-darknet-pomogaet-rossiyanam-obhodit-sankcii" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648475458" data-type="medium" title="28.03.2022 16:50:58 (Europe/Moscow)">вчера</time>            </a>
+        
+                
+                
+    </div>
+
+    <div class="content-header__spacer"></div>
+
+        
+                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
+                        
+
+<vue name="layout-subscribe-button">
+  <textarea hidden class="l-hidden">
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:200396,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+</vue>
+        </div>
+    
+        
+</div>
+
+
+<div class="
+    content
+    content--short
+                    ">
+    <div class="content-container">
+                    <div class="content-title content-title--short l-island-a">
+                                    Отрисовка ID, бронирование отелей и чёрный рынок кредитов: как даркнет помогает россиянам обходить <span class="content-title__last-word">санкции 
+<a href="/editorial">
+    <span class="content-editorial-tick">
+        <span>Статьи редакции</span>
+        <svg class="icon icon--v_editorial" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_editorial"></use></svg>    </span>
+</a>
+</span>                            </div>
+        
+                    <div class="l-island-a">
+    
+        
+            <p>Главное из <a href="https://thebell.io/karty-dengi-dva-id-kak-darknet-pomogaet-rossiyanam-obkhodit-sanktsii" rel="nofollow noreferrer noopener" target="_blank">материала</a> The Bell.</p>
+        
+    </div>
+        
+            </div>
+
+    
+    <a class="content-link" href="https://vc.ru/services/389139-otrisovka-id-bronirovanie-oteley-i-chernyy-rynok-kreditov-kak-darknet-pomogaet-rossiyanam-obhodit-sankcii" data-analytics="Feed Item"></a>
+</div>
+
+
+
+
+<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
+
+  
+      <textarea air-settings>
+            {
+    "lastComments": [
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/550bea14-bfaa-0af0-e1eb-4714267d9864\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/e134f822-587a-d219-900a-8619dbd61555\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/04bce5f1-da8a-e7d4-fa98-26d63e525d93\/"
+        }
+    ]
+}        </textarea>
+  
+        <div class="content-footer__item">
+      
+<vue name="comments-counter">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389139,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/services\/389139-otrisovka-id-bronirovanie-oteley-i-chernyy-rynok-kreditov-kak-darknet-pomogaet-rossiyanam-obhodit-sankcii&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:64}    </textarea>
+</vue>
+    </div>
+  
+    
+        <div class="content-footer__item content-footer__item--shrink">
+      
+<vue name="bookmark">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389139,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+</vue>
+    </div>
+  
+        <div class="content-footer__item content-footer__item--share ">
+      
+<!--googleoff: all-->
+<!--noindex-->
+
+<vue name="layout-shares">
+    <textarea hidden>
+        {"id":389139,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+</vue>
+
+<!--/noindex-->
+<!--googleon: all-->
+    </div>
+  
+        <div class="content-footer__item content-footer__item--right">
+            
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:389139,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:389139,&quot;subsite&quot;:{&quot;id&quot;:200396,&quot;name&quot;:&quot;\u0421\u0435\u0440\u0432\u0438\u0441\u044b&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/158fab2d-76c1-5ed8-898a-76ee48d4c795\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/services&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:60}}    </textarea>
+</vue>
+    </div>
+  
+</div>
+</div>
+
+
+<div
+class="l-mb-28 lm-mb-20 content-feed content-feed--kaspersky content-feed--385913 l-island-bg l-island-round"
+air-module="module.entry"
+air-click="feed_item_clicked?content_id=385913"
+air-entry-type="short"
+data-feed-item-id="content_385913"
+data-content-id="385913"
+data-publish-date="1648473203"
+data-location="my-feed"
+>
+    
+
+
+
+
+<div class="
+    content-header
+    content-header--short
+        content-header--anon        l-island-a
+">
+    <div class="content-header__info">
+
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/kaspersky" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/38c06777-b69e-50ff-aafc-0fad870a347d/-/scale_crop/64x64/')"></div>
+
+                <div class="content-header-author__name">
+                    Лаборатория Касперского                </div>
+
+                                    <div class="content-header-author__approved">
+                        
+<span class="approved_user" title="Официальная страница">
+    <svg class="icon icon--ui_verified" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#ui_verified"></use></svg></span>
+                    </div>
+                            </a>
+        
+                
+                            <a class="content-header__item content-header-number" href="https://vc.ru/kaspersky/385913-recruitment-re-engineering-kak-my-v-proshlom-godu-perestroili-processy-chtoby-nanimat-v-1-5-raza-bystree" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648473203" data-type="medium" title="28.03.2022 16:13:23 (Europe/Moscow)">вчера</time>            </a>
+        
+                
+                
+    </div>
+
+    <div class="content-header__spacer"></div>
+
+        
+                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
+                        
+
+<vue name="layout-subscribe-button">
+  <textarea hidden class="l-hidden">
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:416447,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+</vue>
+        </div>
+    
+        
+</div>
+
+
+<div class="
+    content
+    content--short
+                    ">
+    <div class="content-container">
+                    <div class="content-title content-title--short l-island-a">
+                                    Recruitment re-engineering: как мы в прошлом году перестроили процессы, чтобы нанимать в 1,5 раза быстрее                            </div>
+        
+                    <div class="l-island-a">
+    
+        
+            <p>Как крупной компании, которая продолжает быстро расти, оцифровать и изменить процессы поиска талантов и эффективнее все считать? Опытом «Лаборатории Касперского» делится Кирилл Ширяев, руководитель центра HR-экспертизы компании. </p>
         
     </div>
 
@@ -2546,9 +3067,9 @@ data-location="my-feed"
     data-andropov-type="image"
     data-image-width="1920"
     data-image-height="1080"
-    data-image-max-width="1067"    data-image-max-height="600"            data-image-src="https://leonardo.osnova.io/01ed5ebf-f133-5469-b9c0-55f79b09e9c9/">
+    data-image-max-width="1067"    data-image-max-height="600"            data-image-src="https://leonardo.osnova.io/515b3a2a-8641-5988-b329-ee9f4c9d8fdc/">
 
-    <div class="andropov_image__inner" style=";padding-bottom: 56.2493%;background: linear-gradient(90deg, #3d4558, #453c58);"></div>
+    <div class="andropov_image__inner" style=";padding-bottom: 56.2493%;background: linear-gradient(90deg, #d6e2e2, #d6dae2);"></div>
 </div>
         </div>
     </div>
@@ -2559,7 +3080,7 @@ data-location="my-feed"
             </div>
 
     
-    <a class="content-link" href="https://vc.ru/books/383500-kak-ya-mog-predpolozhit-chto-disney-mozhet-kupit-takuyu-kompaniyu-kak-pixar-kak-bob-ayger-ustroil-sdelku-na-7-4-mlrd" data-analytics="Feed Item"></a>
+    <a class="content-link" href="https://vc.ru/kaspersky/385913-recruitment-re-engineering-kak-my-v-proshlom-godu-perestroili-processy-chtoby-nanimat-v-1-5-raza-bystree" data-analytics="Feed Item"></a>
 </div>
 
 
@@ -2573,7 +3094,7 @@ data-location="my-feed"
       
 <vue name="comments-counter">
     <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383500,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/books\/383500-kak-ya-mog-predpolozhit-chto-disney-mozhet-kupit-takuyu-kompaniyu-kak-pixar-kak-bob-ayger-ustroil-sdelku-na-7-4-mlrd&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:1}    </textarea>
+        {&quot;id&quot;:385913,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/kaspersky\/385913-recruitment-re-engineering-kak-my-v-proshlom-godu-perestroili-processy-chtoby-nanimat-v-1-5-raza-bystree&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:1}    </textarea>
 </vue>
     </div>
   
@@ -2582,7 +3103,7 @@ data-location="my-feed"
       
 <vue name="bookmark">
     <textarea hidden class="l-hidden">
-        {&quot;id&quot;:383500,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+        {&quot;id&quot;:385913,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
 </vue>
     </div>
   
@@ -2593,7 +3114,7 @@ data-location="my-feed"
 
 <vue name="layout-shares">
     <textarea hidden>
-        {"id":383500,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+        {"id":385913,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
 </vue>
 
 <!--/noindex-->
@@ -2602,32 +3123,285 @@ data-location="my-feed"
   
         <div class="content-footer__item content-footer__item--right">
             
-<div class="vote vote--content vote--sum-positive"
-     air-module="module.votes"
-     data-id="383500"
-     data-type="1"
-     data-type-str="content"
-     data-symbols="—|–"
-     data-state="0"
-     data-with-users="1"
-     data-content-id="383500"
-     data-subsite-id="345049"
-     data-subsite-name="Что почитать"
-     data-subsite-avatar="https://leonardo.osnova.io/ea031f0b-5e28-5955-bbd1-6c5c84ac496d/"
-     data-subsite-url="https://vc.ru/books"
-     data-subsite-type="2"
-     data-place="feed"
-            data-count="6"
-        >
-    <div class="vote__button vote__button--minus">
-        <svg class="icon icon--v_arrow_down" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_down"></use></svg>    </div>
-
-    <div class="vote__value" data-value-real="6">
-        6    </div>
-
-    <div class="vote__button vote__button--plus">
-        <svg class="icon icon--v_arrow_up" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_arrow_up"></use></svg>    </div>
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:385913,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:385913,&quot;subsite&quot;:{&quot;id&quot;:416447,&quot;name&quot;:&quot;\u041b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u0438\u044f \u041a\u0430\u0441\u043f\u0435\u0440\u0441\u043a\u043e\u0433\u043e&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/38c06777-b69e-50ff-aafc-0fad870a347d\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/kaspersky&quot;,&quot;type&quot;:1},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:5}}    </textarea>
+</vue>
+    </div>
+  
 </div>
+</div>
+
+
+<div
+class="l-mb-28 lm-mb-20 content-feed content-feed--shkola-upravleniya-skolkovo-84321 content-feed--389368 l-island-bg l-island-round"
+air-module="module.entry"
+air-click="feed_item_clicked?content_id=389368"
+air-entry-type="short"
+data-feed-item-id="content_389368"
+data-content-id="389368"
+data-publish-date="1648485332"
+data-location="my-feed"
+>
+    
+
+
+
+
+<div class="
+    content-header
+    content-header--short
+        content-header--anon        l-island-a
+">
+    <div class="content-header__info">
+
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/s/shkola-upravleniya-skolkovo-84321" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/4740c8f3-e7ed-5fd8-b3a7-f52ae2744149/-/scale_crop/64x64/')"></div>
+
+                <div class="content-header-author__name">
+                    Школа управления Сколково                </div>
+
+                            </a>
+        
+                
+                            <a class="content-header__item content-header-number" href="https://vc.ru/s/shkola-upravleniya-skolkovo-84321/389368-eksperty-skolkovo-o-vyzovah-i-vozmozhnostyah-novoy-ekonomicheskoy-geografii-biznesa" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648485332" data-type="medium" title="28.03.2022 19:35:32 (Europe/Moscow)">11&nbsp;часов</time>            </a>
+        
+                
+                
+    </div>
+
+    <div class="content-header__spacer"></div>
+
+        
+                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
+                        
+
+<vue name="layout-subscribe-button">
+  <textarea hidden class="l-hidden">
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:393649,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+</vue>
+        </div>
+    
+        
+</div>
+
+
+<div class="
+    content
+    content--short
+                    ">
+    <div class="content-container">
+                    <div class="content-title content-title--short l-island-a">
+                                    Эксперты СКОЛКОВО о вызовах и возможностях новой экономической географии бизнеса                            </div>
+        
+                    <div class="l-island-a">
+    
+        
+            <p>В новом выпуске проекта «СКОЛКОВО. На связи» профессора-практики и ректор РЭШ Рубен Ениколопов обсуждали с экспертами Школы как формируется новая экономическая реальность и как в ней можно действовать. Собрали для вас главное из их беседы. </p>
+        
+    </div>
+        
+            </div>
+
+    
+    <a class="content-link" href="https://vc.ru/s/shkola-upravleniya-skolkovo-84321/389368-eksperty-skolkovo-o-vyzovah-i-vozmozhnostyah-novoy-ekonomicheskoy-geografii-biznesa" data-analytics="Feed Item"></a>
+</div>
+
+
+
+
+<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
+
+  
+  
+        <div class="content-footer__item">
+      
+<vue name="comments-counter">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389368,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/s\/shkola-upravleniya-skolkovo-84321\/389368-eksperty-skolkovo-o-vyzovah-i-vozmozhnostyah-novoy-ekonomicheskoy-geografii-biznesa&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:1}    </textarea>
+</vue>
+    </div>
+  
+    
+        <div class="content-footer__item content-footer__item--shrink">
+      
+<vue name="bookmark">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389368,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+</vue>
+    </div>
+  
+        <div class="content-footer__item content-footer__item--share ">
+      
+<!--googleoff: all-->
+<!--noindex-->
+
+<vue name="layout-shares">
+    <textarea hidden>
+        {"id":389368,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+</vue>
+
+<!--/noindex-->
+<!--googleon: all-->
+    </div>
+  
+        <div class="content-footer__item content-footer__item--right">
+            
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:389368,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:389368,&quot;subsite&quot;:{&quot;id&quot;:393649,&quot;name&quot;:&quot;\u0428\u043a\u043e\u043b\u0430 \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0421\u043a\u043e\u043b\u043a\u043e\u0432\u043e&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/4740c8f3-e7ed-5fd8-b3a7-f52ae2744149\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/s\/shkola-upravleniya-skolkovo-84321&quot;,&quot;type&quot;:1},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:0}}    </textarea>
+</vue>
+    </div>
+  
+</div>
+</div>
+
+
+<div
+class="l-mb-28 lm-mb-20 content-feed content-feed--services content-feed--389406 l-island-bg l-island-round"
+air-module="module.entry"
+air-click="feed_item_clicked?content_id=389406"
+air-entry-type="short"
+data-feed-item-id="content_389406"
+data-content-id="389406"
+data-publish-date="1648491167"
+data-location="my-feed"
+>
+    
+
+
+
+
+<div class="
+    content-header
+    content-header--short
+        content-header--anon        l-island-a
+">
+    <div class="content-header__info">
+
+                            <a class="content-header-author content-header-author--subsite content-header__item content-header-author--shrink" href="https://vc.ru/services" data-gtm="Feed Item — Subsite Name — Click">
+                <div class="content-header-author__avatar" style="background-image: url('https://leonardo.osnova.io/158fab2d-76c1-5ed8-898a-76ee48d4c795/-/scale_crop/64x64/')"></div>
+
+                <div class="content-header-author__name">
+                    Сервисы                </div>
+
+                            </a>
+        
+                            <a class="content-header-author content-header-author--user content-header__item content-header-author--desktop" href="https://vc.ru/u/-1-tureckiy-kran" data-gtm="Feed Item — Author Name — Click">
+                <div class="content-header-author__name">
+                    Турецкий кран                </div>
+
+                            </a>
+        
+                            <a class="content-header__item content-header-number" href="https://vc.ru/services/389406-mincifry-porekomendovalo-mobilnym-operatoram-otkazatsya-ot-bezlimitnyh-tarifov" data-gtm="Feed Item — Date — Click">
+                <time class="time" air-module="module.date" data-date="1648491167" data-type="medium" title="28.03.2022 21:12:47 (Europe/Moscow)">9&nbsp;часов</time>            </a>
+        
+                
+                
+    </div>
+
+    <div class="content-header__spacer"></div>
+
+        
+                <div class="content-header__item content-header__item--subscribe content-header__subscribe">
+                        
+
+<vue name="layout-subscribe-button">
+  <textarea hidden class="l-hidden">
+      {&quot;isShowSubscribedButtonLabels&quot;:true,&quot;subsiteId&quot;:200396,&quot;isShowNotificationsButton&quot;:false,&quot;isSubscribed&quot;:false,&quot;isNotificationsEnabled&quot;:false,&quot;type&quot;:&quot;full&quot;,&quot;buttonType&quot;:&quot;inline&quot;,&quot;size&quot;:&quot;tiny&quot;,&quot;mobileSize&quot;:&quot;&quot;,&quot;subscribeButtonIcon&quot;:&quot;v_follow&quot;,&quot;isShortOnMobile&quot;:false,&quot;gtm&quot;:&quot;Subscribe suggestion \u2014 Anon feed item&quot;,&quot;subscribeGtmClicks&quot;:[&quot;Subscribe suggestion \u2014 Anon feed item \u2014 Clicked&quot;,&quot;Feed Item \u2014 Subscribe Button \u2014 Click&quot;]}  </textarea>
+</vue>
+        </div>
+    
+        
+</div>
+
+
+<div class="
+    content
+    content--short
+                    ">
+    <div class="content-container">
+                    <div class="content-title content-title--short l-island-a">
+                                    Минцифры порекомендовало мобильным операторам отказаться от безлимитных <span class="content-title__last-word">тарифов 
+<a href="/editorial">
+    <span class="content-editorial-tick">
+        <span>Статьи редакции</span>
+        <svg class="icon icon--v_editorial" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#v_editorial"></use></svg>    </span>
+</a>
+</span>                            </div>
+        
+                    <div class="l-island-a">
+    
+        
+            <p>И сократить объёмы потребляемого интернет-трафика.</p>
+        
+    </div>
+        
+            </div>
+
+    
+    <a class="content-link" href="https://vc.ru/services/389406-mincifry-porekomendovalo-mobilnym-operatoram-otkazatsya-ot-bezlimitnyh-tarifov" data-analytics="Feed Item"></a>
+</div>
+
+
+
+
+<div class="content-footer content-footer--short l-island-a" air-module="module.liveAnswers">
+
+  
+      <textarea air-settings>
+            {
+    "lastComments": [
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/17d99537-ea3d-d7db-42d7-a6b97cece7d8\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/2d26d614-9bd6-53c2-bbce-c4a8b58c0ed6\/"
+        },
+        {
+            "photo": "https:\/\/leonardo.osnova.io\/1fc459bb-54de-4fd8-da8a-064f1801e531\/"
+        }
+    ]
+}        </textarea>
+  
+        <div class="content-footer__item">
+      
+<vue name="comments-counter">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389406,&quot;type&quot;:&quot;num&quot;,&quot;link&quot;:&quot;https:\/\/vc.ru\/services\/389406-mincifry-porekomendovalo-mobilnym-operatoram-otkazatsya-ot-bezlimitnyh-tarifov&quot;,&quot;gtm&quot;:&quot;Feed Item \u2014 Comments \u2014 Click&quot;,&quot;prevCount&quot;:null,&quot;count&quot;:319}    </textarea>
+</vue>
+    </div>
+  
+    
+        <div class="content-footer__item content-footer__item--shrink">
+      
+<vue name="bookmark">
+    <textarea hidden class="l-hidden">
+        {&quot;id&quot;:389406,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;showTitle&quot;:false,&quot;initialState&quot;:{&quot;isActive&quot;:false},&quot;gtm&quot;:&quot;Feed Item \u2014 Add To Favorites \u2014 Click&quot;}    </textarea>
+</vue>
+    </div>
+  
+        <div class="content-footer__item content-footer__item--share ">
+      
+<!--googleoff: all-->
+<!--noindex-->
+
+<vue name="layout-shares">
+    <textarea hidden>
+        {"id":389406,"gtm":"Feed Item \u2014 Share \u2014 Click"}    </textarea>
+</vue>
+
+<!--/noindex-->
+<!--googleon: all-->
+    </div>
+  
+        <div class="content-footer__item content-footer__item--right">
+            
+<vue name="vote">
+    <textarea hidden class="l-hidden">
+        {&quot;voteData&quot;:{&quot;id&quot;:389406,&quot;type&quot;:1,&quot;typeStr&quot;:&quot;content&quot;,&quot;state&quot;:0,&quot;withUsers&quot;:1,&quot;contentId&quot;:389406,&quot;subsite&quot;:{&quot;id&quot;:200396,&quot;name&quot;:&quot;\u0421\u0435\u0440\u0432\u0438\u0441\u044b&quot;,&quot;avatar&quot;:&quot;https:\/\/leonardo.osnova.io\/158fab2d-76c1-5ed8-898a-76ee48d4c795\/&quot;,&quot;url&quot;:&quot;https:\/\/vc.ru\/services&quot;,&quot;type&quot;:2},&quot;place&quot;:&quot;feed&quot;,&quot;isHidden&quot;:false,&quot;count&quot;:49}}    </textarea>
+</vue>
     </div>
   
 </div>
@@ -2664,13 +3438,13 @@ data-location="my-feed"
 
                     <air module="module.propaganda">
                 <textarea air-settings>
-                    [{"id":1,"label":"Header, 100%x250: D","provider":"adfox","adaptive":["desktop"],"adfox_method":"createAdaptive","auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"ezfl"}},"distribution":"top-desktop"},{"id":2,"label":"Header, 1200x400\/600: M","provider":"adfox","adaptive":["phone"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"ezfn"}},"distribution":"top-mobile"},{"id":4,"label":"Article Branding top","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"p1":"cfovx","p2":"glug"}}},{"id":5,"label":"300x600: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"ezfk"}},"distribution":"right-sidebar"},{"id":6,"label":"Above the Comments: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"h","ps":"bugf","p2":"ffyh"}},"distribution":"before-comments-desktop"},{"id":7,"label":"Above the Comments: M","provider":"adfox","adaptive":["tablet","phone"],"adfox":{"ownerId":228129,"params":{"p1":"bwkpg","p2":"fjxb"}},"distribution":"before-comments-mobile"},{"id":12,"label":"Topbar button: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"p1":"bscsh","p2":"fdhx"}}},{"id":13,"label":"In Article: M","provider":"adfox","adaptive":["phone"],"adfox":{"ownerId":228129,"params":{"pp":"h","ps":"bugf","p2":"flvn"}},"distribution":"in-article-mobile"},{"id":15,"label":"In-Feed Teaser: DM","provider":"adfox","adaptive":["desktop","tablet","phone"],"adfox":{"ownerId":228129,"params":{"p1":"byudx","p2":"ftjf"}}},{"id":16,"label":"Topbar button: M","provider":"adfox","adaptive":["tablet","phone"],"adfox":{"ownerId":228129,"params":{"p1":"byzqf","p2":"ftwx"}}},{"id":17,"label":"Stratum: D","provider":"adfox","adaptive":["desktop"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"fzvb"}}},{"id":18,"label":"Stratum: M","provider":"adfox","adaptive":["tablet","phone"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"fzvc"}}},{"id":19,"label":"Under the News Teaser: DM","provider":"adfox","adaptive":["desktop","tablet","phone"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"p1":"cbltd","p2":"gazs"}}},{"id":20,"label":"Leftbar button: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"p1":"cgxmr","p2":"gnwc"}}},{"id":21,"label":"Header Microteaser: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"gtjk"}}},{"id":23,"label":"In Article: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"hiig"}},"distribution":"in-article-desktop"}]                </textarea>
+                    [{"id":1,"label":"Header, 100%x250: D","provider":"adfox","adaptive":["desktop"],"adfox_method":"createAdaptive","auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"ezfl"}},"distribution":"top-desktop"},{"id":2,"label":"Header, 1200x400\/600: M","provider":"adfox","adaptive":["phone"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"ezfn"}},"distribution":"top-mobile"},{"id":4,"label":"Article Branding top","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"p1":"cfovx","p2":"glug"}}},{"id":5,"label":"300x600: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"ezfk"}},"distribution":"right-sidebar"},{"id":6,"label":"Above the Comments: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"h","ps":"bugf","p2":"ffyh"}},"distribution":"before-comments-desktop"},{"id":7,"label":"Above the Comments: M","provider":"adfox","adaptive":["tablet","phone"],"adfox":{"ownerId":228129,"params":{"p1":"bwkpg","p2":"fjxb"}},"distribution":"before-comments-mobile"},{"id":12,"label":"Topbar button: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"p1":"bscsh","p2":"fdhx"}}},{"id":13,"label":"In Article: M","provider":"adfox","adaptive":["phone"],"adfox":{"ownerId":228129,"params":{"pp":"h","ps":"bugf","p2":"flvn"}}},{"id":15,"label":"In-Feed Teaser: DM","provider":"adfox","adaptive":["desktop","tablet","phone"],"adfox":{"ownerId":228129,"params":{"p1":"byudx","p2":"ftjf"}}},{"id":16,"label":"Topbar button: M","provider":"adfox","adaptive":["tablet","phone"],"adfox":{"ownerId":228129,"params":{"p1":"byzqf","p2":"ftwx"}}},{"id":17,"label":"Stratum: D","provider":"adfox","adaptive":["desktop"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"fzvb"}}},{"id":18,"label":"Stratum: M","provider":"adfox","adaptive":["tablet","phone"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"fzvc"}}},{"id":19,"label":"Under the News Teaser: DM","provider":"adfox","adaptive":["desktop","tablet","phone"],"auto_reload":true,"adfox":{"ownerId":228129,"params":{"p1":"cbltd","p2":"gazs"}}},{"id":20,"label":"Leftbar button: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"p1":"cgxmr","p2":"gnwc"}}},{"id":21,"label":"Header Microteaser: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"gtjk"}}},{"id":23,"label":"In Article: D","provider":"adfox","adaptive":["desktop"],"adfox":{"ownerId":228129,"params":{"pp":"g","ps":"bugf","p2":"hiig"}}}]                </textarea>
             </air>
         
                             <air module="module.hawk">
                 
                 <textarea air-settings>
-                    {"token":"eyJpbnRlZ3JhdGlvbklkIjoiYmFmNjQ4MmUtMmY3ZS00Mzg4LWEyZGYtMDJkYjk2ZmIzOWQwIiwic2VjcmV0IjoiMTFjNDMxZTMtNjRjNS00MWUxLTlmNjgtNTkzMTk1OGQ1NTZiIn0=","release":"e076445d"}                </textarea>
+                    {"token":"eyJpbnRlZ3JhdGlvbklkIjoiYmFmNjQ4MmUtMmY3ZS00Mzg4LWEyZGYtMDJkYjk2ZmIzOWQwIiwic2VjcmV0IjoiMTFjNDMxZTMtNjRjNS00MWUxLTlmNjgtNTkzMTk1OGQ1NTZiIn0=","release":"4e104f4e"}                </textarea>
             </air>
         
                 <air module="module.liveStream">
@@ -2689,8 +3463,8 @@ data-location="my-feed"
              * @deprecated              */
             window.__domain = 'vc.ru';
             window.__apple_web_push_id = 'web.ru.vc.push';
-            window.__static_version = 'e076445d';
-            window.__specials_version = '63ae0b5a';
+            window.__static_version = '4e104f4e';
+            window.__specials_version = '80ab678d';
             window.__waterfall_space_id = '853';
             window.__static_path = '/static/build/vc.ru';
             window.__email_auth = true;
@@ -2765,7 +3539,7 @@ data-location="my-feed"
                         }
                     };
 
-                    req.open('GET', 'https://vcstaticbf19cf1-a.akamaihd.net/static/build/vc.ru/symbols.e076445d.svg', true);
+                    req.open('GET', 'https://vc-static-bf19cf1.gcdn.co/static/build/vc.ru/symbols.4e104f4e.svg', true);
 
                     req.responseType = 'text';
 
@@ -2800,8 +3574,8 @@ data-location="my-feed"
                 scriptTag.crossorigin = 'crossorigin';
                 document.head.appendChild(scriptTag);
 
-            })(document.createElement('script'), 'https://vcstaticbf19cf1-a.akamaihd.net/static/build/vc.ru/main.e076445d.es6.min.js', 'https://vcstaticbf19cf1-a.akamaihd.net/static/build/vc.ru/main.e076445d.es5.min.js');
+            })(document.createElement('script'), 'https://vc-static-bf19cf1.gcdn.co/static/build/vc.ru/main.4e104f4e.es6.min.js', 'https://vc-static-bf19cf1.gcdn.co/static/build/vc.ru/main.4e104f4e.es5.min.js');
         </script>
 
-    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.eu01.nr-data.net","licenseKey":"NRJS-dce6e6fa1bff85ee22a","applicationID":"146362531","transactionName":"MhBSZQoZDURTAUwNXwtaZUMRVwpZVgdASkANBQ==","queueTime":2,"applicationTime":174,"atts":"HldRE0IDHko=","errorBeacon":"bam.eu01.nr-data.net","agent":""}</script></body>
+    </body>
 </html>
