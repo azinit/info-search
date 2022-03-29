@@ -43,9 +43,23 @@
     <main class="wrapper d-flex justify-content-center align-items-center flex-column">
         <img class="logo mb-4" src="{% static "logo.jpg" %}" alt="logo" height="103px">
         {% include 'infosearch/search.html' with query=query %}
-        <hr />
+        <hr/>
         <div class="row">
-            <span>Found pages {{ results }}</span>
+{#            <span>Found pages {{ results }}</span>#}
+            <div class="d-flex justify-content-center align-items-center my-5 flex-column">
+                {% for page in pages %}
+                    <article class="card my-2" style="width: 50rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ page.url }}">{{ page.title }}</a>
+                            </h5>
+                            <p class="card-text">{{ page.description }}</p>
+                        </div>
+                    </article>
+                {% empty %}
+                    <span class="text-muted">Нет результатов</span>
+                {% endfor %}
+            </div>
         </div>
     </main>
     <footer>

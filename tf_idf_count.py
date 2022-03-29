@@ -1,4 +1,5 @@
 import math
+import os
 import zipfile
 from bs4 import BeautifulSoup
 
@@ -48,6 +49,31 @@ def get_result(zip_f, lemmas_index, tokens_index):
         with open(f"lemmas_res/{i}.txt", "w") as lemma_f:
             lemma_f.write("\n".join(res_lemmas))
 
+def get_pages(indices: set):
+    if not indices: return []
+
+    db = os.listdir("data")
+    # files = [db[int(idx)] for idx in indices]
+    pages = []
+
+    for idx in indices:
+        filename = db[int(idx)]
+        with open(f"data/{filename}", "r", encoding="utf-8") as file:
+            content = file.read()
+            soup = BeautifulSoup(content, parser)
+            # TODO: not only og:
+            # TODO: process default value
+            title = soup.find("meta", property="og:title")['content']
+            url = soup.find("meta", property="og:url")['content']
+            description = soup.find("meta", property="og:description")['content']
+            page_meta = {
+                "title": title,
+                "description": description,
+                "url": url,
+            }
+        pages.append(page_meta)
+
+    return pages
 
 if __name__ == '__main__':
     # zip file path
