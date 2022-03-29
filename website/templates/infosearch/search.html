@@ -32,11 +32,27 @@
     }
 </style>
 <div class="input-group search">
-    <input type="text" class="form-control search__input" placeholder="Найдется все">
+    <input type="text" class="form-control search__input" placeholder="Найдется все" value="{{ query }}" onkeydown="onKeydown(this)">
     <div class="input-group-append">
-        <button class="btn search__button" type="button">
+        <button class="btn search__button" type="button" onclick="onSubmit()">
             {#            <i class="fa fa-search"></i>#}
             Найти
         </button>
     </div>
 </div>
+
+<script>
+    let state = {};
+
+    function onKeydown(evt) {
+        if (event.key === 'Enter') {
+            onSubmit()
+        }
+    }
+    function onSubmit() {
+        const inputSearch = document.querySelector('.search__input');
+        const nextQuery = inputSearch.value
+        console.log({ nextQuery });
+        location.href = `/?q=${nextQuery}`
+    }
+</script>

@@ -42,7 +42,8 @@
     {% load static %}
     <main class="wrapper d-flex justify-content-center align-items-center flex-column">
         <img class="logo mb-4" src="{% static "logo.jpg" %}" alt="logo" height="103px">
-        {% include 'infosearch/search.html' %}
+        <div>query={{ query }}</div>
+        {% include 'infosearch/search.html' with query=query %}
     </main>
     <footer>
         ITIS, 2022
