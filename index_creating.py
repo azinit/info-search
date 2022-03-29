@@ -113,6 +113,9 @@ def bool_search(query, index):
                 result = result.intersection(index[normal_form])
             else:
                 result = result.union(index[normal_form])
+        else:
+            if parts[i - 1] == 'and':
+                result = {}
 
     print(result)
 
@@ -142,5 +145,5 @@ if __name__ == '__main__':
     # read inverted index
     read_inverted_index = read_index(inverted_index_path)
 
-    q = "буквально and смертельно"
+    q = "абьюзер and ордывд"
     bool_search(q, read_inverted_index)
