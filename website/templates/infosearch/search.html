@@ -1,0 +1,58 @@
+<style>
+    :root {
+        --primary: #00A3E8;
+        --primary-darker: #018cbe;
+    }
+
+    .search {
+        width: 80%;
+        max-width: 784px;
+
+    }
+
+    .search__input {
+        border-radius: .75rem .625rem .625rem .75rem;
+        border: 3px solid var(--primary);
+        {#height: 42px;#}
+        height: 50px;
+    }
+
+    .search__button {
+        background: var(--primary);
+        transition: 0.25s;
+        font-size: 19px;
+
+        border-radius: 0 10px 10px 0;
+        font-weight: 400;
+        padding: 0 25px;
+    }
+
+    .search__button:hover {
+        background: var(--primary-darker);
+    }
+</style>
+<div class="input-group search">
+    <input type="text" class="form-control search__input" placeholder="Найдется все" value="{{ query }}" onkeydown="onKeydown(this)">
+    <div class="input-group-append">
+        <button class="btn search__button" type="button" onclick="onSubmit()">
+            {#            <i class="fa fa-search"></i>#}
+            Найти
+        </button>
+    </div>
+</div>
+
+<script>
+    let state = {};
+
+    function onKeydown(evt) {
+        if (event.key === 'Enter') {
+            onSubmit()
+        }
+    }
+    function onSubmit() {
+        const inputSearch = document.querySelector('.search__input');
+        const nextQuery = inputSearch.value
+        console.log({ nextQuery });
+        location.href = `/?q=${nextQuery}`
+    }
+</script>

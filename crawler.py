@@ -33,7 +33,8 @@ def crawl_website(from_id: int, amount: int):
         if response.status_code == 200:
             with open(article_pathname, "w", encoding="utf-8") as article_file:
                 article_file.write(response.text)
-            index[article_id] = article_url
+            # index[article_id] = article_url
+            index[article_id] = response.url # Full url
         # Iterate
         article_id += 1
         logger.log(f"Progress: article=[{article_id}] index=[{len(index)}/{amount}] // {response.status_code}")
@@ -44,12 +45,12 @@ def save_index(index):
     logger.log("2/3 SAVING INDEX".center(30, "="))
     # Save text
     logger.log("Save index.txt...")
-    with open("index.txt", "w", encoding="utf-8") as index_txt:
+    with open("index.txt", "w") as index_txt:
         content = [f"{key} {index[key]}" for key in index.keys()]
         index_txt.write("\n".join(content))
     # Save json
     logger.log("Save index.json...")
-    with open("index.json", "w", encoding="utf-8") as index_json:
+    with open("index.json", "w") as index_json:
         json.dump(index, index_json, indent=4)
 
 
@@ -60,6 +61,7 @@ def archive_dump():
 
 if __name__ == '__main__':
     ensure_clean_dist()  # Commentable
-    index = crawl_website(from_id=383300, amount=100)
+    # index = crawl_website(from_id=383300, amount=100)
+    index = crawl_website(from_id=383390, amount=10)
     save_index(index)
     archive_dump()

@@ -4,6 +4,9 @@ import pymorphy2
 from bs4 import BeautifulSoup
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from lib import Logger
+
+logger = Logger("tokenize")
 
 
 def get_text(zip_f):
@@ -20,6 +23,7 @@ def get_tokens(text):
 
 
 def normalize_tokens(tokens):
+    logger.log("NORMALIZING TOKENS".center(64, "="))
     res = []
     # leave just russian words
     for token in tokens:
@@ -29,12 +33,18 @@ def normalize_tokens(tokens):
     return set(res)
 
 
-def get_lemmas(file_with_tokens):
-    morph = pymorphy2.MorphAnalyzer()
-    file = open(file_with_tokens, "r")
+def get_lemmas_from_file(file_with_tokens):
+    file = open(file_with_tokens, "r", encoding="utf-8")
     tokens = file.readlines()
-    lemmas = {}
+    file.close()
+    return get_lemmas(tokens)
 
+
+def get_lemmas(tokens):
+    logger.log("LEMMATISATION".center(64, "="))
+
+    morph = pymorphy2.MorphAnalyzer()
+    lemmas = {}
     # fill lemmas dictionary
     for token in tokens:
         token = token.replace("\n", "")
@@ -58,16 +68,21 @@ if __name__ == '__main__':
     # get tokens
     tkns = get_tokens(text_from_file)
     t = normalize_tokens(tkns)
-    tokensWithNewLines = "\n".join(t)
+    # tokensWithNewLines = "\n".join(t)
+    # tokensWithNewLines = tokensWithNewLines.encode("windows-1252")
+    # tokensWithNewLines = tokensWithNewLines.encode('utf-8').decode('cp1251')
 
     # write to file
-    tokens_file = open("tokens.txt", "a")
-    tokens_file.write(tokensWithNewLines)
+    tokens_file = open("tokens.txt", "a", encoding='utf-8')
+    tokens_file.write("\n".join(t))
+    # tokens_file.writelines(t)
+    tokens_file.close()
 
     # get lemmas
-    lmms = get_lemmas("tokens.txt")
+    # lmms = get_lemmas_from_file("tokens.txt")
+    lmms = get_lemmas(t)
     # write to file
-    lemmas_file = open("lemmas.txt", "a")
+    lemmas_file = open("lemmas.txt", "a", encoding="utf-8")
     for l in lmms:
         lemmas_file.write(l + ": " + " ".join(lmms[l]) + '\n')
     lemmas_file.close()
